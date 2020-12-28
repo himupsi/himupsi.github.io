@@ -1,0 +1,43 @@
+# Publish GitHub Pages
+# azure-pipelines.yml
+
+trigger:
+- master
+
+pool:
+  vmImage: 'Ubuntu-16.04'
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '10.x'
+  displayName: 'Install Node.js'
+
+- script: |
+    npm install
+    npm run updatePosts
+  displayName: 'npm install and update posts'
+
+- script: |
+    ./docs.sh
+    git config --local user.name "himupsi"
+    git config --local user.email "u123u123@naver.com"
+    git add .
+    git commit -m "Publishing GitHub Pages  ***NO_CI***"
+  displayName: 'Update posts'
+
+- task: DownloadSecureFile@1
+  inputs:
+    secureFile: devlog_deploy
+  displayName: 'Get the deploy key'
+
+- script: |
+    mkdir ~/.ssh && mv $DOWNLOADSECUREFILE_SECUREFILEPATH ~/.ssh/id_rsa
+    chmod 700 ~/.ssh && chmod 600 ~/.ssh/id_rsa
+    ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+    git remote set-url --push origin git@github.com:himupsi/himupsi.github.io.git
+    git push origin HEAD:master
+  displayName: 'Publish GitHub Pages'
+  condition: |
+    and(not(eq(variables['Build.Reason'], 'PullRequest')),
+        eq(variables['Build.SourceBranch'], 'refs/heads/master'))
