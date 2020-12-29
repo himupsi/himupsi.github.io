@@ -3,14 +3,12 @@
 
 trigger:
   branches:
+    include:
     - master
   paths:
     include:
-    - '/posts' # same as '/' for the repository root
-    - '/images' # same as '/' for the repository root
-    exclude:
-    - '*'
-
+    - '/posts'
+    - '/images'
 
 pool:
   vmImage: 'Ubuntu-16.04'
