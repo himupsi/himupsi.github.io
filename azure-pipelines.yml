@@ -18,14 +18,6 @@ steps:
     npm run updatePosts
   displayName: 'npm install and update posts'
 
-- script: |
-    ./docs.sh
-    git config --local user.name "himupsi"
-    git config --local user.email "u123u123@naver.com"
-    git add .
-    git commit -m "Publishing GitHub Pages  ***NO_CI***"
-  displayName: 'Update posts'
-
 - task: DownloadSecureFile@1
   inputs:
     secureFile: azure_devops
@@ -37,6 +29,11 @@ steps:
     ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
     ssh-keyscan -t rsa 13.229.188.59 >> ~/.ssh/known_hosts
     ssh-keyscan -t rsa 13.250.177.223 >> ~/.ssh/known_hosts
+    ./docs.sh
+    git config --local user.name "himupsi"
+    git config --local user.email "u123u123@naver.com"
+    git add .
+    git commit -m "Publishing GitHub Pages  ***NO_CI***"
     git remote set-url --push origin git@github.com:himupsi/himupsi.github.io.git
     git push origin HEAD:master
   displayName: 'Publish GitHub Pages'
