@@ -1,5 +1,5 @@
 {
-	"createDat": "202012290209",
+	"createDat": "202012290217",
 	"categoriesTags": {
 		"개발": [
 			"Github",
@@ -7,8 +7,7 @@
 			"marked.js",
 			"highlight.js",
 			"Disqus",
-			"Vue.js",
-			"azure"
+			"Vue.js"
 		],
 		"all": [
 			"Github",
@@ -16,8 +15,7 @@
 			"marked.js",
 			"highlight.js",
 			"Disqus",
-			"Vue.js",
-			"azure"
+			"Vue.js"
 		]
 	},
 	"posts": [
@@ -61,18 +59,6 @@
 			],
 			"id": "2020_12_23_social_reply copy",
 			"name": "2020_12_23_social_reply copy.md",
-			"md": "고맙게도 무료로 댓글을 사용할수 있게 해주는 [Disqus](https://disqus.com/) 가 있다. \n\n적용하는 절차는 다음과 같다.\n\n1. Disqus에 가입한다.\n\n1. 가입하고 화면의 `GET STARTED`를 누른다.\n\n    ![스크린샷](/images/20201223_2_1.png?raw=true)\n\n1. `I want to install diqus on my site`를 선택한다.\n\n    ![스크린샷](/images/20201223_2_2.png?raw=true)\n\n1. 사이트 정보를 입력하고 `Create Site`를 누른다.\n\n    ![스크린샷](/images/20201223_2_3.png?raw=true)\n\n1. 그냥 무료인 `Basic`를 선택한다.\n\n    ![스크린샷](/images/20201223_2_4.png?raw=true)\n\n1. 블로그를 어떤 걸로 구축했는지에 따라 선택하면 된다. 이 블로그는 vue.js기반으로 만들고 있기 때문에 맨아래 `Universal code`를 선택했다.\n\n    ![스크린샷](/images/20201223_2_5.png?raw=true)\n\n1. `Universal code`를 선택하면 아래와 같은 코드가 생성된다.\n\n    ![스크린샷](/images/20201223_2_6.png?raw=true)\n\n* VueJs 에서 적용하는 방법 아래를 참고!\n\n    ```html\n    <template>\n        <div id=\"disqus_thread\"></div>\n    <template>\n    ```\n    ```javascript\n    <script>\n    export default {\n        mounted: function ()\n            var disqus_config = function () {\n\n            // Replace PAGE_URL with your page's canonical URL variable\n            this.page.url = (window.location.host + window.location.pathname);\n            // Replace PAGE_IDENTIFIER with your page's unique identifier variable\n            this.page.identifier = this.$route.params.postid;\n\n            };\n\n            (function() { // DON'T EDIT BELOW THIS LINE\n            var d = document, s = d.createElement('script');\n            s.src = 'https://himupsi-github.disqus.com/embed.js';\n            s.setAttribute('data-timestamp', +new Date());\n            (d.head || d.body).appendChild(s);\n            })();\n        }\n    }\n    </script>\n    ```"
-		},
-		{
-			"title": "테스트",
-			"summary": "테스트",
-			"createDate": 202012291107,
-			"category": "개발",
-			"tags": [
-				"azure"
-			],
-			"id": "2020_12_29_test",
-			"name": "2020_12_29_test.md",
 			"md": "고맙게도 무료로 댓글을 사용할수 있게 해주는 [Disqus](https://disqus.com/) 가 있다. \n\n적용하는 절차는 다음과 같다.\n\n1. Disqus에 가입한다.\n\n1. 가입하고 화면의 `GET STARTED`를 누른다.\n\n    ![스크린샷](/images/20201223_2_1.png?raw=true)\n\n1. `I want to install diqus on my site`를 선택한다.\n\n    ![스크린샷](/images/20201223_2_2.png?raw=true)\n\n1. 사이트 정보를 입력하고 `Create Site`를 누른다.\n\n    ![스크린샷](/images/20201223_2_3.png?raw=true)\n\n1. 그냥 무료인 `Basic`를 선택한다.\n\n    ![스크린샷](/images/20201223_2_4.png?raw=true)\n\n1. 블로그를 어떤 걸로 구축했는지에 따라 선택하면 된다. 이 블로그는 vue.js기반으로 만들고 있기 때문에 맨아래 `Universal code`를 선택했다.\n\n    ![스크린샷](/images/20201223_2_5.png?raw=true)\n\n1. `Universal code`를 선택하면 아래와 같은 코드가 생성된다.\n\n    ![스크린샷](/images/20201223_2_6.png?raw=true)\n\n* VueJs 에서 적용하는 방법 아래를 참고!\n\n    ```html\n    <template>\n        <div id=\"disqus_thread\"></div>\n    <template>\n    ```\n    ```javascript\n    <script>\n    export default {\n        mounted: function ()\n            var disqus_config = function () {\n\n            // Replace PAGE_URL with your page's canonical URL variable\n            this.page.url = (window.location.host + window.location.pathname);\n            // Replace PAGE_IDENTIFIER with your page's unique identifier variable\n            this.page.identifier = this.$route.params.postid;\n\n            };\n\n            (function() { // DON'T EDIT BELOW THIS LINE\n            var d = document, s = d.createElement('script');\n            s.src = 'https://himupsi-github.disqus.com/embed.js';\n            s.setAttribute('data-timestamp', +new Date());\n            (d.head || d.body).appendChild(s);\n            })();\n        }\n    }\n    </script>\n    ```"
 		}
 	]
