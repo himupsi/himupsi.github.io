@@ -7,8 +7,9 @@
     "build": "vue-cli-service build && npm run copy404 && npm run updatePosts",
     "lint": "vue-cli-service lint",
     "copy404": "cp ./docs/index.html ./docs/404.html",
-    "updatePosts": "node ./helper/PostsDataMaker",
-    "copyDemo": "cp -r ./demo/* ./docs/"
+    "updatePosts": "node ./helper/PostsDataMaker && npm run copyImages",
+    "copyDemo": "cp -r ./demo/* ./docs/",
+    "copyImages": "cp -r ./images ./docs/images"
   },
   "dependencies": {
     "axios": "^0.21.0",
