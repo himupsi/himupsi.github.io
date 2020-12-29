@@ -20,7 +20,7 @@ steps:
 
 - task: DownloadSecureFile@1
   inputs:
-    secureFile: azure_devops
+    secureFile: id_rsa
   displayName: 'Get the deploy key'
 
 - script: |
