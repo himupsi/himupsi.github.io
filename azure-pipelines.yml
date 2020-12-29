@@ -20,7 +20,7 @@ steps:
 
 - task: DownloadSecureFile@1
   inputs:
-    secureFile: id_rsa
+    secureFile: devlog_deploy
   displayName: 'Get the deploy key'
 
 - script: |
@@ -29,7 +29,6 @@ steps:
     ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
     git config --local user.name "himupsi"
     git config --local user.email "u123u123@naver.com"
-    ssh -T himupsi@github.com
     git add .
     git commit -m "Publishing GitHub Pages  ***NO_CI***"
     git remote set-url --push origin git@github.com:himupsi/himupsi.github.io.git
