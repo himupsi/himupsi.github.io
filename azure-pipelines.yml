@@ -2,13 +2,16 @@
 # azure-pipelines.yml
 
 trigger:
-  branches:
-    include:
-    - master
+  - master
   paths:
     include:
-    - '/posts'
-    - '/images'
+    - /posts
+    - /images
+    exclude:
+    - /src
+    - /docs
+    - '*'
+
 
 pool:
   vmImage: 'Ubuntu-16.04'
