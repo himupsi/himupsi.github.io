@@ -35,6 +35,7 @@ steps:
     mkdir ~/.ssh && mv $DOWNLOADSECUREFILE_SECUREFILEPATH ~/.ssh/id_rsa
     chmod 700 ~/.ssh && chmod 600 ~/.ssh/id_rsa
     ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+    ssh-keyscan -t rsa 13.229.188.59 >> ~/.ssh/known_hosts
     git remote set-url --push origin git@github.com:himupsi/himupsi.github.io.git
     git push origin HEAD:master
   displayName: 'Publish GitHub Pages'
