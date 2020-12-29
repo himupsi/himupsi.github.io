@@ -28,7 +28,7 @@ steps:
 
 - task: DownloadSecureFile@1
   inputs:
-    secureFile: devlog_deploy
+    secureFile: azure_devops
   displayName: 'Get the deploy key'
 
 - script: |
