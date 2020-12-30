@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://himupsi.github.io/</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <lasmod>2020-12-30</lasmod>
+    </url>
+    <url>
+        <loc>https://himupsi.github.io/2020_12_23_github_page</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+        <lastmod>2020-12-23</lastmod>
+    </url>
+    <url>
+        <loc>https://himupsi.github.io/2020_12_23_marked_highlight</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+        <lastmod>2020-12-23</lastmod>
+    </url>
+    <url>
+        <loc>https://himupsi.github.io/2020_12_23_social_reply copy</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+        <lastmod>2020-12-23</lastmod>
+    </url>
+</urlset>
