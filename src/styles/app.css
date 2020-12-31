@@ -179,6 +179,7 @@
 .u-menu-all-tag-toggle-btn
 {
     font-weight: normal !important;
+    margin-left: 10px;
     cursor: pointer;
 }
 
