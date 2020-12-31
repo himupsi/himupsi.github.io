@@ -18,7 +18,7 @@
                         v-if="categoryTags.length > 0"
                         @click="toggleAllTags()"
                         :variant="activeTagCount > 0 ? 'dark': 'secondary'">
-                        <b-icon :icon="activeTagCount > 0 ? 'check-circle-fill':'check-circle'"></b-icon>
+                        <b-icon icon="check-circle-fill"></b-icon>
                         전체
                     </b-badge>
                 </div>
@@ -68,7 +68,7 @@
                         v-if="categoryTags.length > 0"
                         @click="toggleAllTags()"
                         :variant="activeTagCount > 0 ? 'dark': 'secondary'">
-                        <b-icon :icon="activeTagCount > 0 ? 'check-circle-fill':'check-circle'"></b-icon>
+                        <b-icon icon="check-circle-fill"></b-icon>
                         전체
                     </b-badge>
                 </div>
@@ -95,7 +95,7 @@
             <div class="u-main-title">
                 <div>
                     <b-button squared class="u-menu-toggle-btn" v-b-toggle.sidebar-posts-menu variant="light" size="sm">
-                        <b-icon-three-dots></b-icon-three-dots>
+                        <b-icon-square-half></b-icon-square-half>
                     </b-button>
                     <b-button-group class="u-posts-display-type-btn">
                         <b-button squared variant="light" size="sm"

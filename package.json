@@ -9,7 +9,7 @@
     "copy404": "cp ./docs/index.html ./docs/404.html",
     "updatePosts": "node ./helper/PostsDataMaker",
     "copyDemo": "cp -r ./demo/* ./docs/",
-    "removeOldDeloyFiles": "rm -rf css && rm -rf js"
+    "removeOldDeloyFiles": "rm -rf ./docs/css && rm -rf ./docs/js && rm ./docs/favicon.ico && rm ./docs/index.html && rm ./docs/404.html"
   },
   "dependencies": {
     "axios": "^0.21.0",
