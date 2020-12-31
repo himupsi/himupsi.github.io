@@ -95,19 +95,19 @@ function createSiteMapXml(defaultUrl, posts)
     }
     for (i = 0; i < posts.length; i++)
     {
-        url.push(createUrlObj(posts[i]))
+        url.push(createPostUrlObj(posts[i]))
     }
 
     return convert.js2xml(siteMapObj, {compact: true, ignoreComment: true, spaces: 4});
 }
 
-function createUrlObj(post)
+function createPostUrlObj(post)
 {
     let urlObj, dateMoment;
 
 
     urlObj = {
-        loc: BLOG_URL + post.id,
+        loc: BLOG_URL + 'post/' +  post.id,
         changefreq: 'monthly',
         priority: 0.5
     };
