@@ -70,7 +70,7 @@ function createSiteMapXml(defaultUrl, posts)
             loc: BLOG_URL,
             changefreq: 'weekly',
             priority: 0.8,
-            lasmod: moment().format('YYYY-MM-DD')
+            lastmod: moment().format('YYYY-MM-DD')
         }
     ];
     
