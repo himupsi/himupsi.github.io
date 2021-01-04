@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "npm run removeOldDeloyFiles && vue-cli-service build --no-clean",
+    "build": "npm run removeOldDeloyFiles && vue-cli-service build --no-clean && npm run copy404",
     "lint": "vue-cli-service lint",
+    "copy404": "cp ./docs/index.html ./docs/404.html",
     "updatePosts": "node ./helper/PostsDataMaker",
     "copyDemo": "cp -r ./demo/* ./docs/",
     "removeOldDeloyFiles": "rm -rf ./docs/css || true && rm -rf ./docs/js || true && rm ./docs/favicon.ico || true && rm ./docs/index.html || true && rm ./docs/404.html || true"
