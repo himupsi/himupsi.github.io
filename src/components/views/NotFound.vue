@@ -4,7 +4,7 @@
         <div class="u-page-not-found">
             <div class="u-align-center">
                 <b-icon icon="exclamation-circle-fill" variant="danger"></b-icon>
-                페이지를 찾을수 없습니다.
+                페이지를 찾을 수 없습니다.
             </div>
             <div class="u-align-center">
                 <b-button squared variant="ligth" size="sm" class="u-home-btn" @click="back()">
@@ -20,6 +20,11 @@
 <script>
 export default {
     name: 'NotFound',
+    metaInfo: function () {
+        return {
+            title: '힘없이 Devlog - 페이지를 찾을 수 없습니다.'
+        }
+    },
     methods:
     {
         back: function ()

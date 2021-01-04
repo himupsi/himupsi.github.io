@@ -59,6 +59,11 @@ export default {
             relativeDate: undefined
         };
     },
+    metaInfo: function () {
+        return {
+            title: '힘없이 Devlog' + (this.content ? (' - ' + this.content.title): ''),
+        }
+    },
     methods:
     {
         back: function ()
@@ -78,7 +83,6 @@ export default {
             }
             this.content.markdown = marked(this.content.md);
             this.setDisplayDate(this.content.createDate);
-
             let disqus_config = function () {
             this.page.url = (window.location.host + window.location.pathname);
             this.page.identifier = this.$route.params.postid;

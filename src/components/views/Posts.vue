@@ -156,6 +156,11 @@ export default {
             ]
         }
     },
+    metaInfo: function () {
+        return {
+            title: '힘없이 Devlog'
+        }
+    },
     methods:
     {
         init: function ()

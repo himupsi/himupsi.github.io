@@ -12,18 +12,23 @@ import Content from "@/components/layout/Content.vue";
 import {mapActions} from 'vuex';
 
 export default {
-  name: 'App',
-  methods: {
-      ...mapActions(['patchPostList'])
-  },
-  mounted: function ()
-  {
-      this.patchPostList();
-  },
-  components:
-  {
-      Header, Content
-  }
+    name: 'App',
+    metaInfo: function () {
+    return {
+        title: '힘없이 Devlog'
+    }
+    },
+    methods: {
+        ...mapActions(['patchPostList'])
+    },
+    mounted: function ()
+    {
+        this.patchPostList();
+    },
+    components:
+    {
+        Header, Content
+    }
 }
 </script>
 

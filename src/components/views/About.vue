@@ -14,6 +14,11 @@
 <script>
 export default {
     name: 'About',
+    metaInfo: function () {
+        return {
+            title: '힘없이 Devlog - About'
+        }
+    },
     methods:
     {
         back: function ()
