@@ -85,50 +85,15 @@ export default {
             let dateMoment = moment(dateStr, 'YYYYMMDDhhmm')
             this.relativeDate = dateMoment.fromNow();
             this.createDate = dateMoment.format('LLL');
-        },
-        getPostData: function ()
-        {
-            let thisPostItem = this;
-            let filename = this.post.id + '.md'
-
-            this.content = undefined;
-            axios.get(this.$Config.POSTS_REPO_URL + filename)
-            .then(function (res)
-            {
-                let decodedData, data
-                
-                data = res.data
-                decodedData = decodeURIComponent(escape(atob(data.content)));
-                thisPostItem.content = PostParser.parse(filename, decodedData);
-                if (thisPostItem.content === undefined)
-                    return;
-                thisPostItem.setPostContent(thisPostItem.content);
-                thisPostItem.setDisplayDate(thisPostItem.content.createDate);
-            }, function (err)
-            {
-                //TODO 다시 가져오기 버튼 추가하기
-                thisPostItem.content = {
-                    errorTitle: '포스트 내용을 가져오는데 실패 했습니다.',
-                    hasError: true,
-                    errorDetail: err
-                }
-            });
         }
     },
     mounted: function ()
     {
         let thisPostItem = this;
         this.content = this.$store.state.postContentMap[this.post.id]
-        if (this.content === undefined)
-        {
-            this.getPostData();
-        }
-        else
-        {
-            if (this.content.thumbnail !== undefined)
-                this.content.thumbnailUrl = (this.$Config.IMAGE_URL + this.content.thumbnail + '?raw=true');
-            this.setDisplayDate(this.content.createDate);
-        }
+        if (this.content.thumbnail !== undefined)
+            this.content.thumbnailUrl = (this.$Config.IMAGE_URL + this.content.thumbnail + '?raw=true');
+        this.setDisplayDate(this.content.createDate);
     }
 }
 </script>

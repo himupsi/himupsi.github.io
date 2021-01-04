@@ -70,13 +70,8 @@ export default {
             let thisPost = this;
             let postid = this.$route.params.postid;
             this.content = this.$store.state.postContentMap[postid];
-            if (this.content === undefined)
-               this.getPostData();
-            else
-            {
-                this.content.markdown = marked(this.content.md);
-                this.setDisplayDate(this.content.createDate);
-            }
+            this.content.markdown = marked(this.content.md);
+            this.setDisplayDate(this.content.createDate);
 
             let disqus_config = function () {
             this.page.url = (window.location.host + window.location.pathname);
@@ -99,32 +94,6 @@ export default {
             this.createDate = dateMoment.format('LLL');
         },
         ...mapActions(['setPostContent']),
-        getPostData: function ()
-        { 
-            let thisPost = this;
-            let postid = this.$route.params.postid;
-            let filename = this.postid + '2222.md'
-
-            axios.get(this.$Config.POSTS_REPO_URL + filename)
-            .then(function (res)
-            {
-                let decodedData, data
-                
-                data = res.data
-                decodedData = decodeURIComponent(escape(atob(data.content)));
-                thisPost.content = PostParser.parse(filename, decodedData);
-                if (thisPost.content === undefined)
-                    return;
-                thisPost.setPostContent(thisPost.content);
-                thisPost.content.markdown = marked(thisPost.content.md);
-                thisPost.setDisplayDate(thisPost.content.createDate);
-            }, function (err)
-            {
-                if (err.response.status === 404)
-                    thisPost.$router.push({ name: 'notFound' });
-                console.error(err);
-            });
-        }
     },
     computed:
     {

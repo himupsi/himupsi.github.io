@@ -22,7 +22,6 @@ export default new Vuex.Store({
         updateCnt: 0,
         orderby: undefined,
         isInitialized: false,
-        hasTemp: false,
         lastPageNum: 1,
         maxPageNum: 1,
         error: undefined
@@ -45,8 +44,7 @@ export default new Vuex.Store({
             return (state.lastPageNum < state.maxPageNum);
         },
         categories: function (state) {
-            return _.filter(state.categories,
-                function (o) { return state.hasTemp || o.value !== 'temp' });
+            return state.categories;
         },
         categoryTags: function (state) {
             return state.categoryTags;
@@ -67,18 +65,6 @@ export default new Vuex.Store({
                 post = postList[i];
                 state.postContentMap[post.id] = post;
             }
-        },
-        setTempPostList(state, postList)
-        {
-            let i, post;
-            for (i = 0; i < postList.length; i++)
-            {
-                post = postList[i];
-                post.category = 'temp';
-                state.originPostList.push(post);
-            }
-            state.hasTemp = (postList.length > 0);
-            state.maxPageNum = Math.ceil(state.originPostList.length / Config.PAGE_SIZE);
         },
         setPostContent(state, postContent) {
             state.postContentMap[postContent.id] = postContent;
@@ -165,33 +151,9 @@ export default new Vuex.Store({
                 postsData = res.data;
                 commit('setCategoriesTags', postsData.categoriesTags);
                 commit('setPostList', postsData.posts);
-                return axios.get(Config.POSTS_REPO_URL)
             }, function (err)
             {
                 commit('setPageError', err);
-            })
-            .then(function (res)
-            {
-                let i, fileName, post, tempPosts, postid;
-                
-                tempPosts = [];
-                for (i = 0; i < res.data.length; i++)
-                {
-                    fileName = res.data[i].name;
-                    if (! fileName.endsWith('.md'))
-                        continue;
-                    postid = fileName.replace(/.md$/, '');
-                    post = state.postContentMap[postid];
-                    if (post === undefined)
-                    {
-                        res.data[i].id = postid;
-                        tempPosts.push(res.data[i]);
-                    }
-                }
-                commit('setTempPostList', tempPosts);
-            }, function (err)
-            {
-                console.error('임시 저장 포스트를 가져올수 없습니다.');
             })
             ['finally'](function ()
             {

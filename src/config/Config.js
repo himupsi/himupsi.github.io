@@ -15,7 +15,6 @@ const Config = {
         { name: '개발', value: '개발', icon: 'code-square' , variant: 'dark' },
         { name: '일상', value: '일상', icon: 'emoji-laughing-fill', variant: 'warning' },
         { name: '생각', value: '생각', icon: 'chat-dots-fill', variant: 'info' },
-        //{ name: '기타', value: undefined, icon: 'grip-horizontal', variant: 'secondary' },
         { name: '임시', value: 'temp', icon: 'box', variant: 'secondary' }
     ]
 }

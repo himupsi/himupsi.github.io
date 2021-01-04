@@ -179,7 +179,7 @@
 .u-menu-all-tag-toggle-btn
 {
     font-weight: normal !important;
-    margin-left: 10px;
+    margin-left: 5px;
     cursor: pointer;
 }
 
@@ -213,8 +213,6 @@
     opacity: 0.5;
     margin-right: 7px;
 }
-
-
 
 .u-main-content
 {
@@ -260,6 +258,8 @@
 .u-posts-orderby-btn
 {
     width: 94px;
+    display: flex !important;
+    justify-content: space-between;
 }
 
 .u-post-item

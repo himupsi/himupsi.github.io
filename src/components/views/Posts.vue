@@ -18,7 +18,7 @@
                         v-if="categoryTags.length > 0"
                         @click="toggleAllTags()"
                         :variant="activeTagCount > 0 ? 'dark': 'secondary'">
-                        <b-icon icon="check-circle-fill"></b-icon>
+                        <b-icon icon="check"></b-icon>
                         전체
                     </b-badge>
                 </div>
@@ -68,7 +68,7 @@
                         v-if="categoryTags.length > 0"
                         @click="toggleAllTags()"
                         :variant="activeTagCount > 0 ? 'dark': 'secondary'">
-                        <b-icon icon="check-circle-fill"></b-icon>
+                        <b-icon icon="check"></b-icon>
                         전체
                     </b-badge>
                 </div>
