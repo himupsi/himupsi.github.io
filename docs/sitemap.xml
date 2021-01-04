@@ -4,22 +4,22 @@
         <loc>https://himupsi.github.io/</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
-        <lastmod>2020-12-31</lastmod>
+        <lastmod>2021-01-04</lastmod>
     </url>
     <url>
-        <loc>https://himupsi.github.io/post/2020_12_23_github_page</loc>
+        <loc>https://himupsi.github.io/?/post/2020_12_23_github_page</loc>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
         <lastmod>2020-12-23</lastmod>
     </url>
     <url>
-        <loc>https://himupsi.github.io/post/2020_12_23_marked_highlight</loc>
+        <loc>https://himupsi.github.io/?/post/2020_12_23_marked_highlight</loc>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
         <lastmod>2020-12-23</lastmod>
     </url>
     <url>
-        <loc>https://himupsi.github.io/post/2020_12_23_social_reply</loc>
+        <loc>https://himupsi.github.io/?/post/2020_12_23_social_reply</loc>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
         <lastmod>2020-12-23</lastmod>

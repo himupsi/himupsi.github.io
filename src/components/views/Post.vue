@@ -70,6 +70,10 @@ export default {
             let thisPost = this;
             let postid = this.$route.params.postid;
             this.content = this.$store.state.postContentMap[postid];
+
+            if (this.content === undefined)
+                thisPost.$router.push({ name: 'notFound' });
+
             this.content.markdown = marked(this.content.md);
             this.setDisplayDate(this.content.createDate);
 

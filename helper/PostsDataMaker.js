@@ -107,7 +107,7 @@ function createPostUrlObj(post)
 
 
     urlObj = {
-        loc: BLOG_URL + 'post/' +  post.id,
+        loc: BLOG_URL + '?/post/' +  post.id,
         changefreq: 'monthly',
         priority: 0.5
     };
