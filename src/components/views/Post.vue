@@ -59,10 +59,29 @@ export default {
             relativeDate: undefined
         };
     },
-    metaInfo: function () {
-        return {
-            title: '힘없이 Devlog' + (this.content ? (' - ' + this.content.title): ''),
+    metaInfo: function ()
+    {
+        let metaInfo, description;
+
+        metaInfo = {
+            title: '힘없이 Devlog',
+            meta:[]
         }
+
+        if (this.content === undefined)
+            return metaInfo;
+
+        if (this.content.title)
+            metaInfo.title += (' - ' + this.content.title);
+        if (this.content.summary)
+        {
+            metaInfo.meta.push({
+                vmid: "description",
+                name: "description",
+                content: this.content.summary
+            });
+        }
+        return metaInfo;
     },
     methods:
     {

@@ -14,9 +14,16 @@ import {mapActions} from 'vuex';
 export default {
     name: 'App',
     metaInfo: function () {
-    return {
-        title: '힘없이 Devlog'
-    }
+        return {
+            title: '힘없이 Devlog',
+            meta: [
+                {
+                    vmid: "description",
+                    name: "description",
+                    content: '직접 만드는 블로그..'
+                }
+            ]
+        }
     },
     methods: {
         ...mapActions(['patchPostList'])
