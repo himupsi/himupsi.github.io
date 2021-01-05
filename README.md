@@ -11,9 +11,9 @@
 * 개발 기술(?)
 
     * NodeJS
-        * 포스트들을 파싱하고 sitemap.xml을 만든다.
+        * 포스트를 파싱하고 sitemap.xml을 만든다.
     * Azure DevOps
-        * sitemap 생성, 포스트 글 파싱 자동화에 사용한다.
+        * 포스트를 파싱하고 sitemap.xml 생성 자동화에 사용한다.
     * Disqus
         * 소셜 댓글 기능(무료)
 
