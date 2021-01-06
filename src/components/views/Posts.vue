@@ -15,6 +15,7 @@
                 <div v-if="categoryTags.length > 0" class="u-menu-title">
                     태그
                     <b-badge class="u-menu-all-tag-toggle-btn"
+                        pill
                         v-if="categoryTags.length > 0"
                         @click="toggleAllTags()"
                         :variant="activeTagCount > 0 ? 'dark': 'secondary'">
@@ -69,6 +70,7 @@
                     <div v-if="categoryTags.length > 0" class="u-menu-title">
                         태그
                         <b-badge class="u-menu-all-tag-toggle-btn"
+                            pill
                             v-if="categoryTags.length > 0"
                             @click="toggleAllTags()"
                             :variant="activeTagCount > 0 ? 'dark': 'secondary'">

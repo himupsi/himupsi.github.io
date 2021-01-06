@@ -195,6 +195,7 @@
 {
     font-weight: normal !important;
     margin-left: 5px;
+    padding-left: 4px !important;
     cursor: pointer;
 }
 
@@ -436,7 +437,7 @@
 .u-post-title
 {
     padding: 0 10px;
-    font-weight: 500;
+    font-weight: 600;
     display: flex;
     flex-grow: 0;
     flex-shrink: 0;
@@ -506,7 +507,7 @@
 .u-resume-title
 {
     padding: 0 10px;
-    font-weight: 500;
+    font-weight: 600;
     display: flex;
     flex-grow: 0;
     flex-shrink: 0;
@@ -546,7 +547,6 @@
 {
     margin-right: 5px;
 }
-
 
 .u-align-center
 {

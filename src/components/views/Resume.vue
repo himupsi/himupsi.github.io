@@ -6,8 +6,10 @@
                 <b-icon icon="chevron-left"></b-icon>
                 뒤로
             </b-button>
+            이력
         </div>
         <div class="u-resume-content">
+            <div class="markdown-body" v-html="resume"></div>
         </div>
     </div>
 </div>
@@ -17,12 +19,23 @@
 
 import marked from "marked";
 
+const resume = `
+작성중.
+`;
+
 export default {
     name: 'Resume',
     metaInfo: function () {
         return {
-            title: '힘없이 Devlog - Resume'
+            title: '힘없이 Devlog - 이력'
         }
+    },
+    data: function ()
+    {
+        return {
+            resume: marked(resume)
+        }
+
     },
     methods:
     {

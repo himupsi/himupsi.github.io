@@ -7,7 +7,7 @@ category: 개발
 tags: [ marked.js, highlight.js ]
 -----
 
-### Marked 코드 블록 하이라이트
+#### marked.js 에 코드 블록 하이라이트
 
 [marked](https://marked.js.org/)로 파싱한 마크다운에서 코드 블록이 심심하게 표시된다. 검색해보니 [highlight.js](https://highlightjs.org/) 를 적용할 수 있다고 한다.
 
