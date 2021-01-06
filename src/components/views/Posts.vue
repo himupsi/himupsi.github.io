@@ -43,6 +43,9 @@
                 </div>
             </div>
             <div class="u-menu-footer">
+                <a class="u-mene-readme-link" target="_blank" :href="readmeUrl">
+                    <b-icon  class="u-menu-about-icon" icon="question-circle-fill"></b-icon>
+                </a>
             </div>
         </div>
         <div class="u-main-content">
@@ -52,44 +55,51 @@
              backdrop
              shadow
              backdrop-variant="transparent">
-                <div class="u-menu-title">카테고리</div>
-                <div v-if="categories" class="u-menu-categories">
-                    <div class="u-menu-category" v-for="category in categories" :key="category.name">
-                        <div v-bind:class="{ 'u-menu-active-category' : activeCategory && category.value === activeCategory.value }"
+                <div class="u-menu-body" v-if="isInitialized">
+                    <div class="u-menu-title">카테고리</div>
+                    <div v-if="categories" class="u-menu-categories">
+                        <div class="u-menu-category" v-for="category in categories"
+                            :key="category.name"
+                            :class="{ 'u-menu-active-category' : activeCategory && category.value === activeCategory.value }"
                             @click="changeCategory(category)">
                             <b-icon :icon="category.icon" :variant="category.variant"></b-icon>
                             {{category.name}}
                         </div>
                     </div>
-                </div>
-                <div v-if="categoryTags.length > 0" class="u-menu-title">
-                    태그
-                    <b-badge class="u-menu-all-tag-toggle-btn"
-                        v-if="categoryTags.length > 0"
-                        @click="toggleAllTags()"
-                        :variant="activeTagCount > 0 ? 'dark': 'secondary'">
-                        <b-icon icon="check"></b-icon>
-                        전체
-                    </b-badge>
-                </div>
-                <div v-if="categoryTags.length > 0" class="u-menu-tags">
-                    <b-badge class="u-menu-tag"
-                        v-for="tag in categoryTags"
-                        :key="tag.name"
-                        :variant="tag.variant"
-                        @click="toggleTag(tag)">
-                        {{tag.name}}
-                    </b-badge>
-                </div>
-                <div v-if="demos.length > 0" class="u-menu-title">
-                    데모
-                </div>
-                <div class="u-menu-demos">
-                    <div class="u-menu-dmove" v-for="demo in demos"
-                        :key="demo.name">
-                        <b-icon icon="link45deg"></b-icon>
-                        <a target="_blank" :href="demo.src">{{demo.name}}</a>
+                    <div v-if="categoryTags.length > 0" class="u-menu-title">
+                        태그
+                        <b-badge class="u-menu-all-tag-toggle-btn"
+                            v-if="categoryTags.length > 0"
+                            @click="toggleAllTags()"
+                            :variant="activeTagCount > 0 ? 'dark': 'secondary'">
+                            <b-icon icon="check"></b-icon>
+                            전체
+                        </b-badge>
                     </div>
+                    <div v-if="categoryTags.length > 0" class="u-menu-tags">
+                        <b-badge class="u-menu-tag"
+                            v-for="tag in categoryTags"
+                            :key="tag.name"
+                            :variant="tag.variant"
+                            @click="toggleTag(tag)">
+                            {{tag.name}}
+                        </b-badge>
+                    </div>
+                    <div v-if="demos.length > 0" class="u-menu-title">
+                        데모
+                    </div>
+                    <div class="u-menu-demos">
+                        <div class="u-menu-dmove" v-for="demo in demos"
+                            :key="demo.name">
+                            <b-icon icon="link45deg"></b-icon>
+                            <a target="_blank" :href="demo.src">{{demo.name}}</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="u-menu-footer">
+                    <a class="u-mene-readme-link" target="_blank" :href="readmeUrl">
+                        <b-icon  class="u-menu-about-icon" icon="question-circle-fill"></b-icon>
+                    </a>
                 </div>
             </b-sidebar>
             <div class="u-main-title">
@@ -153,7 +163,8 @@ export default {
             demos:
             [
                 // { name: 'Test', src: 'https://himupsi.github.io/test.html'}
-            ]
+            ],
+            readmeUrl: 'https://github.com/himupsi/himupsi.github.io/blob/master/README.md'
         }
     },
     methods:
@@ -179,7 +190,11 @@ export default {
         },
         viewPage: function (page)
         {
-            this.$router.push({ name: 'page', params: { pagename: page.name, src: page.src } })
+            this.$router.push({ name: 'page', params: { pagename: page.name, src: page.src } });
+        },
+        viewAbout: function ()
+        {
+            this.$router.push({ name: 'about' });
         },
         changeDisplay: function (displayType)
         {

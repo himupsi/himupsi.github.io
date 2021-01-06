@@ -3,7 +3,7 @@ import VueRouter from "vue-router";
 import VueX from "vuex";
 import Posts from "../components/views/Posts.vue";
 import Post from "../components/views/Post.vue";
-import About from "../components/views/About.vue";
+import Resume from "../components/views/Resume.vue";
 import NotFound from "../components/views/NotFound.vue";
 
 Vue.use(VueRouter);
@@ -21,9 +21,9 @@ const routes = [
     component: Post
   },
   {
-    path: "/about",
-    name: "about",
-    component: About
+    path: "/resume",
+    name: "resume",
+    component: Resume
   },
   {
     path: '*',

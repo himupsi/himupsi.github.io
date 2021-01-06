@@ -90,7 +90,7 @@
     display: flex;
     flex-direction: column;
     flex: 0 0 200px;
-    padding: 10px;
+    padding-left: 10px;
 }
 
 .u-menu-body
@@ -104,6 +104,18 @@
     flex: 0 0 30px;
     display: flex;
     align-items: center;
+}
+
+.u-mene-readme-link
+{
+    display: flex;
+    align-items: center;
+}
+
+.u-menu-about-icon
+{
+    color: #666;
+    margin-right: 5px;
 }
 
 .u-main-menu-inprogress
@@ -126,7 +138,10 @@
 
 .u-mobile-posts-menu .b-sidebar-body
 {
-    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 200px;
+    padding-left: 10px;
 }
 
 .u-menu-toggle-btn
@@ -483,12 +498,12 @@
     min-height: 345px;
 }
 
-.u-about .u-main-content
+.u-resume .u-main-content
 {
     width: 100%;
 }
 
-.u-about-title
+.u-resume-title
 {
     padding: 0 10px;
     font-weight: 500;
@@ -496,6 +511,15 @@
     flex-grow: 0;
     flex-shrink: 0;
     align-items: center;
+}
+
+.u-resume-content
+{
+    box-shadow: 0 0 4px rgba(150, 150, 150, 0.5);    
+    padding: 15px;
+    margin: 10px;
+    max-width: 1000px;
+    flex-grow: 1;
 }
 
 .u-no-post
@@ -595,6 +619,16 @@
     {
         font-size: 100%;
     }
+
+    .u-resume-title
+    {
+        font-size: 100%
+    }
+
+    .u-resume-content .markdown-body
+    {
+        font-size: 100%;
+    }
 }
 
 @media only screen and (max-width: 650px) {
@@ -659,6 +693,16 @@
     }
 
     .u-post-content .markdown-body
+    {
+        font-size: 80%;
+    }
+
+    .u-resume-title
+    {
+        font-size: 90%
+    }
+
+    .u-resume-content .markdown-body
     {
         font-size: 80%;
     }

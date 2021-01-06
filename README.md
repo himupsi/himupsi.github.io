@@ -8,7 +8,7 @@
 
     * Vue.js
 
-* 기술(?)
+* 기술 및 툴(?)
 
     * NodeJS
         * 포스트를 파싱하고 sitemap.xml을 만든다.
@@ -17,7 +17,7 @@
     * Disqus
         * 소셜 댓글 기능(무료)
 
-* 주요 라이브러리
+* 주요 사용 라이브러리
 
     * [lodash](https://lodash.com/)
     * [marked.js](https://marked.js.org/)
@@ -38,5 +38,6 @@
 
 ### Todo
 
-* About 페이지 만들기
+* 이력서 페이지 만들기
 * 태그 색상 변경하기(파스텔톤으로..)
+* 레이아웃 추가하기
