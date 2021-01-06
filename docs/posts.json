@@ -1,5 +1,5 @@
 {
-	"createDat": "202101040559",
+	"createDat": "202101060302",
 	"categoriesTags": {
 		"개발": [
 			"Github",
@@ -31,7 +31,7 @@
 			],
 			"id": "2020_12_23_github_page",
 			"name": "2020_12_23_github_page.md",
-			"md": "### Github page\n\nGithub repository 를 이용하여 개인 홈페이지 또는 블로그를 만들수 있다. 공식적으로 [Github page]((https://pages.github.com/))라는 이름으로 서비스하고 있다.\n백엔드는 사용할 수 없기때문에 정적 웹 페이지(Static web page)로 만들어야 한다.\n\n* 참고로 보통 아래 두개의 번들?을 이용해 블로그를 만듷어 사용하는 것 같다. 둘다 테마도 지원하고 npm 또는 gem 명령으로 쉽게 설치가 가능하다.\n    * [Jekyll](https://jekyllrb.com/): Github page에서 언급하고 있다. rubygems 명령을 이용해야되서 조금 불편하다.\n    * [Hexo](https://hexo.io/docs/github-pages): 사용해보지는 않았지만 npm 명령만으로 설치가 끝나는거 같다.\n\n### hello world 페이지 만들기\n\n1. GitHub에 레파지토리를 만든다.\n    * 레파지토리 이름: `{사용자ID}.github.io`\n1. index.html 을 만들고 커밋하고 푸쉬한다.\n    * 간단히 아래 처럼 hello world만 입력하고 커밋한다.\n        ```\n            hello world\n        ```\n1. `https://{사용자ID}.github.io/` 에 접속하고 확인해본다.\n    * 푸쉬 후 바로 적용되지는 않는다. 푸시하고 좀 기다려야한다.(10초?)\n\n1. Github의 repository 설정을 통해 경로와 branch를 설정할 수 있다.\n\n    ![스크린샷](/images/20201223_1_1.png)"
+			"md": "#### Github page\n\nGithub repository 를 이용하여 개인 홈페이지 또는 블로그를 만들수 있다. 공식적으로 [Github page]((https://pages.github.com/))라는 이름으로 서비스하고 있다.\n백엔드는 사용할 수 없기때문에 정적 웹 페이지(Static web page)로 만들어야 한다.\n\n* 참고로 보통 아래 두개의 번들?을 이용해 블로그를 만듷어 사용하는 것 같다. 둘다 테마도 지원하고 npm 또는 gem 명령으로 쉽게 설치가 가능하다.\n    * [Jekyll](https://jekyllrb.com/): Github page에서 언급하고 있다. rubygems 명령을 이용해야되서 조금 불편하다.\n    * [Hexo](https://hexo.io/docs/github-pages): 사용해보지는 않았지만 npm 명령만으로 설치가 끝나는거 같다.\n\n#### hello world 페이지 만들기\n\n1. GitHub에 레파지토리를 만든다.\n    * 레파지토리 이름: `{사용자ID}.github.io`\n1. index.html 을 만들고 커밋하고 푸쉬한다.\n    * 간단히 아래 처럼 hello world만 입력하고 커밋한다.\n        ```\n            hello world\n        ```\n1. `https://{사용자ID}.github.io/` 에 접속하고 확인해본다.\n    * 푸쉬 후 바로 적용되지는 않는다. 푸시하고 좀 기다려야한다.(10초?)\n\n1. Github의 repository 설정을 통해 경로와 branch를 설정할 수 있다.\n\n    ![스크린샷](/images/20201223_1_1.png)"
 		},
 		{
 			"title": "marked.js 코드 블록 하이라이트 시키기",
@@ -45,7 +45,7 @@
 			],
 			"id": "2020_12_23_marked_highlight",
 			"name": "2020_12_23_marked_highlight.md",
-			"md": "### Marked 코드 블록 하이라이트\n\n[marked](https://marked.js.org/)로 파싱한 마크다운에서 코드 블록이 심심하게 표시된다. 검색해보니 [highlight.js](https://highlightjs.org/) 를 적용할 수 있다고 한다.\n\n* 적용하기\n\n    ``` javascript\n    import marked from \"marked\";\n    import hljs from 'highlight.js';\n    import 'highlight.js/styles/atom-one-dark-reasonable.css';\n\n    marked.setOptions({\n        highlight: function(code, lang) {\n            // lang 값이 없을 경우 highlight 함수에서 에러가 발생한다.\n            return lang !== '' ? hljs.highlight(lang, code).value : code;\n        }\n    });\n    ```\n\n* 코드 테마 미리보기\n    * https://highlightjs.org/static/demo/ 여기를 참고\n    * css 파일은 `/node_modules/highlight.js/styles` 안에 들어있다. 테마 이름과 거의 비슷한 이름으로 css파일이 존재한다. css 파일 이름을 확인하고 import 하면 된다.\n    * 이상하게 백그라운드 색은 적용이 안되는 것 같다.. 보기 나쁘지 않으므로 그냥 사용한다.\n\n* 참고\n    * https://stackoverflow.com/questions/48843806/how-to-use-npm-marked-with-highlightjs"
+			"md": "#### marked.js 에 코드 블록 하이라이트\n\n[marked](https://marked.js.org/)로 파싱한 마크다운에서 코드 블록이 심심하게 표시된다. 검색해보니 [highlight.js](https://highlightjs.org/) 를 적용할 수 있다고 한다.\n\n* 적용하기\n\n    ``` javascript\n    import marked from \"marked\";\n    import hljs from 'highlight.js';\n    import 'highlight.js/styles/atom-one-dark-reasonable.css';\n\n    marked.setOptions({\n        highlight: function(code, lang) {\n            // lang 값이 없을 경우 highlight 함수에서 에러가 발생한다.\n            return lang !== '' ? hljs.highlight(lang, code).value : code;\n        }\n    });\n    ```\n\n* 코드 테마 미리보기\n    * https://highlightjs.org/static/demo/ 여기를 참고\n    * css 파일은 `/node_modules/highlight.js/styles` 안에 들어있다. 테마 이름과 거의 비슷한 이름으로 css파일이 존재한다. css 파일 이름을 확인하고 import 하면 된다.\n    * 이상하게 백그라운드 색은 적용이 안되는 것 같다.. 보기 나쁘지 않으므로 그냥 사용한다.\n\n* 참고\n    * https://stackoverflow.com/questions/48843806/how-to-use-npm-marked-with-highlightjs"
 		},
 		{
 			"title": "블로그에 소셜 댓글 기능 추가하기",
