@@ -51,7 +51,7 @@ function main()
                 console.log(fileNames[i] + ':', e)
             }
         }
-        output.createDat = moment().format('YYYYMMDDhhmm');
+        output.createDate = moment().format('YYYYMMDDhhmm');
         output.categoriesTags = categoryTags;
         output.categoriesTags['all'] = tags;
         output.posts = posts;
