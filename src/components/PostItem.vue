@@ -41,14 +41,6 @@
                     </b-badge>
                 </div>
             </div>
-            <div class="u-post-item-error"
-                v-if="content.hasError">
-                {{content.errorTitle}}
-                <b-button squared variant="ligth" size="sm" @click="getPostData()">
-                    <b-icon-arrow-clockwise></b-icon-arrow-clockwise>
-                </b-button>
-            </div>
-
         </div>
     </div>
 </template>
@@ -74,7 +66,7 @@ export default {
     },
     methods: {
         viewPost: function () {
-            if (this.content !== undefined && ! this.content.hasError)
+            if (this.content !== undefined)
                 this.$router.push({ name: 'post', params: { postid: this.content.id } })
         },
         ...mapActions(['setPostContent']),

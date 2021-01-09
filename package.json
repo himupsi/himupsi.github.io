@@ -9,7 +9,7 @@
     "copy404": "cp ./docs/index.html ./docs/404.html",
     "updatePosts": "node ./helper/PostsDataMaker",
     "copyDemo": "cp -r ./demo/* ./docs/",
-    "removeOldDeloyFiles": "rm -rf ./docs/css || true && rm -rf ./docs/js || true && rm ./docs/favicon.ico || true && rm ./docs/index.html || true && rm ./docs/404.html || true"
+    "removeOldDeloyFiles": "rm -rf ./docs/css || true && rm -rf ./docs/js || true && rm ./docs/favicon.ico || true && rm ./docs/index.html || true && rm ./docs/404.html || true && rm -rf ./docs/resources || true"
   },
   "dependencies": {
     "axios": "^0.21.0",

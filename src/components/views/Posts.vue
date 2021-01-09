@@ -107,14 +107,16 @@
             <div class="u-main-title">
                 <div>
                     <b-button squared class="u-menu-toggle-btn" v-b-toggle.sidebar-posts-menu variant="light" size="sm">
-                        <b-icon-square-half></b-icon-square-half>
+                        <i class="icon-menu"></i>
                     </b-button>
                     <b-button-group class="u-posts-display-type-btn">
                         <b-button squared variant="light" size="sm"
                             v-for="displayType in displayTypes"
                             :class="{'active': displayType.value === display.value}"
-                            :key="displayType.value">
-                            <b-icon :icon="displayType.icon" @click="changeDisplay(displayType)"></b-icon>
+                            :key="displayType.value"
+                            @click="changeDisplay(displayType)"
+                            >
+                            <i :class="displayType.class"></i>
                         </b-button>
                     </b-button-group>
                 </div>
@@ -154,8 +156,8 @@ export default {
             display: undefined,
             displayTypes:
             [
-                { icon: 'view-stacked', value: 'list' },
-                { icon: 'grid3x3-gap', value: 'grid' },
+                { class: 'icon-list', value: 'list' },
+                { class: 'icon-grid', value: 'grid' },
             ],
             orderby:
             [

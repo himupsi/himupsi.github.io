@@ -43,17 +43,19 @@
     width: 60px;
     display: flex;
     justify-content: space-around;
-    margin-right: 10px;
+    align-items: center;
+    font-size: 1.2em;
 }
 
-.u-header-mail-link svg:hover
+.u-header .u-right-links i
 {
-    fill: #444;
+    color: #444;
+    cursor: pointer;
 }
 
-.u-header-github-link svg:hover
+.u-header .u-right-links i:hover
 {
-    fill: #444;
+    color: #999;
 }
 
 .u-main
@@ -140,13 +142,16 @@
 {
     display: flex;
     flex-direction: column;
-    padding-left: 10px;
+    padding: 10px 0 0 10px;
 }
 
 .u-menu-toggle-btn
 {
+    color: #555 !important;
     margin-right: 10px;
     display: none !important;
+    padding: 0 2px !important;
+    font-size: 1.2em !important;
 }
 
 .u-menu-title
@@ -387,6 +392,23 @@
     align-self: center;
     flex: 1 1 100%;
     text-align: center;
+}
+
+.u-posts-display-type-btn button
+{
+    font-size: 1.2em;
+    padding: 0 1px;
+    color: #999;
+}
+
+.u-posts-display-type-btn button:active
+{
+    color: #444;
+}
+
+.u-posts-display-type-btn button:hover
+{
+    color: #777;
 }
 
 .u-posts-list .u-post-item-inprogress
