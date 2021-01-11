@@ -1,6 +1,6 @@
 -----
-title: GitHub SSH key 로 접속하기
-summary: 시작이 반. hello world 페이지 만들기
+title: Github SSH key 로 접속하기
+summary: SSH key를 이용해 Github Desktop을 사용하지 않고 CLI에서 커밋하고 푸시하기.
 thumbnail: github_logo.jpg
 createDate: 202101120100
 category: 개발
@@ -9,7 +9,7 @@ tags: [ Github SSH ]
 
 #### Github SSH key로 접속하기
 
-보통은  Github Desktop를 이용해 Github를 이용하지만 [Azure DevOps](https://azure.microsoft.com/ko-kr/services/devops/) 의 pipeline에서 Github에 접근하기 위해 SSH key를 사용했다.
+보통은  Github Desktop을 이용해 Github를 이용하지만 [Azure DevOps](https://azure.microsoft.com/ko-kr/services/devops/) 의 pipeline에서 Github에 접근하기 위해 SSH key를 사용했다.
 
 SSH key 생성 및 등록 방법은 Github에 잘 설명되어 있어 링크로 대체한다.
 1. 먼저 SSH key를 생성한다.
