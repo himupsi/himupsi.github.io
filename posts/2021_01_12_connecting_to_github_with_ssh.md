@@ -2,7 +2,7 @@
 title: GitHub SSH key 로 접속하기
 summary: 시작이 반. hello world 페이지 만들기
 thumbnail: github_logo.jpg
-createDate: 202201120100
+createDate: 202101120100
 category: 개발
 tags: [ Github SSH ]
 -----
