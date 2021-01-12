@@ -715,6 +715,11 @@
         font-size: 90%
     }
 
+    .u-post-content
+    {
+        padding: 10px;
+    }
+
     .u-post-content .markdown-body
     {
         font-size: 80%;
@@ -728,6 +733,11 @@
     .u-resume-content .markdown-body
     {
         font-size: 80%;
+    }
+
+    .markdown-body ol, .markdown-body ul
+    {
+        padding-left: 15px;
     }
 }
 
