@@ -15,7 +15,7 @@ SSH key 생성 및 등록 방법은 Github에 잘 설명되어 있어 링크로 
 1. 먼저 SSH key를 생성한다.
     * https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
     * **참고**
-        * SSH 접속시`> Permission denied (publickey).` 가 발생해서 한참을 삽질했는데 key 생성시 passphrase를 사용해서 일어난 문제였다.
+        * SSH 접속시 터미널 로그를 보니 `> Permission denied (publickey).` 가 발생해서 한참을 삽질했는데 key 생성시 passphrase를 사용해서 일어난 문제였다.
         * pipeline(외부 linux 환경)에서 키파일의 passphrase를 쉡스크립트에 넣기도 이상해서 그냥 passphrase 없는 key를 사용하는게...(나는 그렇게 사용하기로 결정했다.)
 
 1. 생성된 key 파일 중 공개키를 Github에 등록한다.
