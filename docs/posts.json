@@ -1,5 +1,5 @@
 {
-	"createDate": "202101110458",
+	"createDate": "202101140315",
 	"categoriesTags": {
 		"개발": [
 			"Github",
@@ -10,6 +10,9 @@
 			"Vue.js",
 			"Github SSH"
 		],
+		"생각": [
+			"새해 결심"
+		],
 		"all": [
 			"Github",
 			"Github Page",
@@ -17,7 +20,8 @@
 			"highlight.js",
 			"Disqus",
 			"Vue.js",
-			"Github SSH"
+			"Github SSH",
+			"새해 결심"
 		]
 	},
 	"posts": [
@@ -74,7 +78,20 @@
 			],
 			"id": "2021_01_12_connecting_to_github_with_ssh",
 			"name": "2021_01_12_connecting_to_github_with_ssh.md",
-			"md": "#### Github SSH key로 접속하기\n\n보통은  Github Desktop을 이용해 Github를 이용하지만 [Azure DevOps](https://azure.microsoft.com/ko-kr/services/devops/) 의 pipeline에서 Github에 접근하기 위해 SSH key를 사용했다.\n\nSSH key 생성 및 등록 방법은 Github에 잘 설명되어 있어 링크로 대체한다.\n1. 먼저 SSH key를 생성한다.\n    * https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent\n    * **참고**\n        * SSH 접속시`> Permission denied (publickey).` 가 발생해서 한참을 삽질했는데 key 생성시 passphrase를 사용해서 일어난 문제였다.\n        * pipeline(외부 linux 환경)에서 키파일의 passphrase를 쉡스크립트에 넣기도 이상해서 그냥 passphrase 없는 key를 사용하는게...(나는 그렇게 사용하기로 결정했다.)\n\n1. 생성된 key 파일 중 공개키를 Github에 등록한다.\n    * https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account\n1. SSH key로 접속하기\n    * 생성된 private key 권한을 수정하고 known_hosts에 등록한다.\n        ```zsh\n        chmod 700 ~/.ssh && chmod 600 ~/.ssh/id_rsa\n        ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts\n        ```\n    * git 설정하기\n        ```zsh\n        git config --local user.name \"깃허브ID\"\n        git config --local user.email \"이메일\"\n        ```\n    * Push 예시*\n        ```zsh\n        chmod 700 ~/.ssh && chmod 600 ~/.ssh/id_rsa\n        ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts\n        git config --local user.name \"깃허브ID\"\n        git config --local user.email \"이메일\"\n        git add .\n        git commit -m \"커밋 메세지\"\n        git remote set-url --push origin git@github.com:깃허브ID/레포지토리이름.git\n        git push origin HEAD:master\n        ```\n1. 테스트\n    * https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/error-permission-denied-publickey\n\n\n* 절차는 아래에 잘나와있다.\n    * https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh"
+			"md": "#### Github SSH key로 접속하기\n\n보통은  Github Desktop을 이용해 Github를 이용하지만 [Azure DevOps](https://azure.microsoft.com/ko-kr/services/devops/) 의 pipeline에서 Github에 접근하기 위해 SSH key를 사용했다.\n\nSSH key 생성 및 등록 방법은 Github에 잘 설명되어 있어 링크로 대체한다.\n1. 먼저 SSH key를 생성한다.\n    * https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent\n    * **참고**\n        * SSH 접속시 터미널 로그를 보니 `> Permission denied (publickey).` 가 발생해서 한참을 삽질했는데 key 생성시 passphrase를 사용해서 일어난 문제였다.\n        * pipeline(외부 linux 환경)에서 키파일의 passphrase를 쉡스크립트에 넣기도 이상해서 그냥 passphrase 없는 key를 사용하는게...(나는 그렇게 사용하기로 결정했다.)\n\n1. 생성된 key 파일 중 공개키를 Github에 등록한다.\n    * https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account\n1. SSH key로 접속하기\n    * 생성된 private key 권한을 수정하고 known_hosts에 등록한다.\n        ```zsh\n        chmod 700 ~/.ssh && chmod 600 ~/.ssh/id_rsa\n        ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts\n        ```\n    * git 설정하기\n        ```zsh\n        git config --local user.name \"깃허브ID\"\n        git config --local user.email \"이메일\"\n        ```\n    * Push 예시*\n        ```zsh\n        chmod 700 ~/.ssh && chmod 600 ~/.ssh/id_rsa\n        ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts\n        git config --local user.name \"깃허브ID\"\n        git config --local user.email \"이메일\"\n        git add .\n        git commit -m \"커밋 메세지\"\n        git remote set-url --push origin git@github.com:깃허브ID/레포지토리이름.git\n        git push origin HEAD:master\n        ```\n1. 테스트\n    * https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/error-permission-denied-publickey\n\n\n* 절차는 아래에 잘나와있다.\n    * https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh"
+		},
+		{
+			"title": "2020년을 돌아보며 + 새해 결심",
+			"thumbnail": "jw.jpg",
+			"summary": "코로나 끝나라. 2021년 잘 살아보자.",
+			"createDate": 202101150010,
+			"category": "생각",
+			"tags": [
+				"새해 결심"
+			],
+			"id": "2021_01_15_new_year",
+			"name": "2021_01_15_new_year.md",
+			"md": "### 2020년 생긴일\n\n#### 프리랜서\n\n이전 회사를 퇴사하는 시점에 딸(모모)가 생기면서 빨리 일자리를 구해야겠다는 생각에 아는 분 소개로 프리랜서를 시작했다. 선거관리위원회에서 일하게 되었는데 JSP, XPlatform을 개발을 경험해 볼수 있었다.\n선거철을 잘 버티면 비교적 편한 업무 환경이다. 재계약할 수 있었지만 내가 성장하길 원했던 방향과 달라 1년 2개월로 프리랜서 생활을 끝내기로 했다. 좋은 사람과 같이 못하게 된 것은 아쉽지만..\n\n#### 코로나\n\n2020년 초부터 코로나가 발생하기 시작하면서 내 삶에도 많은 변화가 찾아왔다. 외출시 마스크가 당연시 되고 대중교통 이용을 꺼려하게 되었고 친구들과는 카톡으로만 안부를 주고 받으며 가족 친지를 자주 뵙지도 못하게 되었다.\n일상적인 것들이 소중함을 느낀다. 지긋지긋한 코로나가 빨리 끝났으면 좋겠다..\n\n#### 이사\n\n딸이 태어나기 전에 이사를 서둘러 했다. 짐이 많지 않은 걸로 생각해서 이삿짐 센터를 부르지 않아 와이프가 고생을 많이 했다. 와이프한테 미안하다.(담부턴 꼭 이삿짐 센터를 이용하자.)\n\n#### 딸(모모) 태어남\n\n5월 4일 딸이 태어났다. 너무 예쁘고 귀엽다. 열심히 살아야 겠다.\n\n#### 집값 폭등, 주식 시장 과열\n\n내집 마련의 꿈이 점점 멀어져 가는 것을 느끼는 한 해였다. 월급만으로 집을 살 수 없는 시대가 온 것 같다.\n어느 순간부터 너도 나도 주식을 이야기하며 투자하는게 당연한 분위기가 되었다. 코로나 때문인건가...\n\n### 새해 결심\n\n#### 개발 블로그 포스팅\n\n일단 블로그 개발은 어느 정도 마무리되었다. 이제 운영을 잘해보자. 글쓰기 연습도 할겸..\n\n#### 새 일자리\n\n지금은 백수다... 좋은 직장에 들어가자.\n\n#### 수입 늘리기\n\n나는 자본주의 체제에 살고 있다. 자본가가 되고 싶다. 아직 방법은 잘 모르겠다.\n\n### 끝으로\n\n2020년은 힘들다면 힘들었던 한해였던 것 같다. 내 딸 정원이가 태어난 해이기도 하다. 2021년에는 다시 코로나 이전의 모습으로 돌아갔으면 좋겠다.\n캠핑도 다니고 싶고 친구들을 만나 수다도 떨고 싶다."
 		}
 	]
 }

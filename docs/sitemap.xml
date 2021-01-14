@@ -4,7 +4,7 @@
         <loc>https://himupsi.github.io/</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
-        <lastmod>2021-01-11</lastmod>
+        <lastmod>2021-01-14</lastmod>
     </url>
     <url>
         <loc>https://himupsi.github.io/?/post/2020_12_23_github_page</loc>
@@ -29,5 +29,11 @@
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
         <lastmod>2021-01-12</lastmod>
+    </url>
+    <url>
+        <loc>https://himupsi.github.io/?/post/2021_01_15_new_year</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+        <lastmod>2021-01-15</lastmod>
     </url>
 </urlset>
