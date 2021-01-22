@@ -216,6 +216,8 @@
 {
     margin: 0 3px 3px 0;
     cursor: pointer;
+    color: #333 !important;
+    font-weight: 400 !important;
 }
 
 .u-menu-demos
@@ -603,6 +605,126 @@
 {
     outline: none;
 }
+
+.u-inactive-tag
+{
+    color: #CCC !important;
+}
+
+.u-tag-1
+{
+    background-color: #FFC4C4 !important;
+}
+
+.u-tag-2
+{
+    background-color: #FFD2C4 !important;
+}
+
+.u-tag-3
+{
+    background-color: #FFE1C4 !important;
+}
+
+.u-tag-4
+{
+    background-color: #FFF0C4 !important;
+}
+
+.u-tag-5
+{
+    background-color:  #FFFFC4 !important;
+}
+
+.u-tag-6
+{
+    background-color:  #F0FFC4 !important;
+}
+
+.u-tag-7
+{
+    background-color:  #E1FFC4 !important;
+}
+
+.u-tag-8
+{
+    background-color: #D2FFC4 !important;
+}
+
+.u-tag-9
+{
+    background-color:  #C4FFC4 !important;
+}
+
+.u-tag-10
+{
+    background-color:  #C4FFD2 !important;
+}
+
+.u-tag-11
+{
+    background-color: #C4FFE1 !important;
+}
+
+.u-tag-12
+{
+    background-color: #C4FFF0 !important;
+}
+
+.u-tag-13
+{
+    background-color: #C4FFFF !important;
+}
+
+.u-tag-14
+{
+    background-color: #C4F0FF !important;
+}
+
+.u-tag-15
+{
+    background-color: #C4E1FF !important;
+}
+
+.u-tag-16
+{
+    background-color: #C4D2FF !important;
+}
+
+.u-tag-17
+{
+    background-color: #C4C4FF !important;
+}
+
+.u-tag-18
+{
+    background-color: #D2C4FF !important;
+}
+
+.u-tag-19
+{
+    background-color: #E1C4FF !important;
+}
+
+.u-tag-20
+{
+    background-color: #F0C4FF !important;
+}
+
+.u-tag-21
+{
+    background-color: #FFC4FF !important;
+}
+
+.u-tag-22
+{
+    background-color: #FFC4F0 !important;
+}
+
+.u-tag-23
+{
+    background-color: #FFC4E1 !important;
+}    
 
 @media only screen and (max-width: 900px) {
     /* For small screen: */

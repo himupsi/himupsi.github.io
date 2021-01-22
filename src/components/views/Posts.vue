@@ -27,7 +27,7 @@
                     <b-badge class="u-menu-tag"
                         v-for="tag in categoryTags"
                         :key="tag.name"
-                        :variant="tag.variant"
+                        :class="tag.class"
                         @click="toggleTag(tag)">
                         {{tag.name}}
                     </b-badge>
@@ -82,7 +82,7 @@
                         <b-badge class="u-menu-tag"
                             v-for="tag in categoryTags"
                             :key="tag.name"
-                            :variant="tag.variant"
+                            :class="tag.class"
                             @click="toggleTag(tag)">
                             {{tag.name}}
                         </b-badge>

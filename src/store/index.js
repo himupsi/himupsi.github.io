@@ -4,8 +4,6 @@ import axios from "axios";
 import _ from "lodash";
 import Config from '@/config/Config.js'
 
-const TAG_VARIANTS = [ 'primary', 'success', 'danger', 'warning', 'info' ];
-
 Vue.use(Vuex);
 
 export default new Vuex.Store({
@@ -227,15 +225,13 @@ function filterPostListByTags(postList, tagMap) {
 
 function setTagActive(tag, isAcitive)
 {
-    let variantIdx;
 
     tag.isActive = isAcitive;
     if (isAcitive)
     {
-        variantIdx = Math.floor(Math.random() * TAG_VARIANTS.length)
-        tag.variant = TAG_VARIANTS[variantIdx];
+        tag.class = 'u-tag-' + (Math.floor(Math.random() * 22) +1)
     }
     else
-        tag.variant = undefined;
+        tag.class = 'u-inactive-tag';
 }
 
