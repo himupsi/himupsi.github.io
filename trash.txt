@@ -1,0 +1,41 @@
+        getPostData: function ()
+        { 
+            let thisPost = this;
+            let postid = this.$route.params.postid;
+            let filename = this.postid + '2222.md'
+
+            axios.get(this.$Config.POSTS_REPO_URL + filename)
+            .then(function (res)
+            {
+                let decodedData, data
+                
+                data = res.data
+                decodedData = decodeURIComponent(escape(atob(data.content)));
+                thisPost.content = PostParser.parse(filename, decodedData);
+                if (thisPost.content === undefined)
+                    return;
+                thisPost.setPostContent(thisPost.content);
+                thisPost.content.markdown = marked(thisPost.content.md);
+                thisPost.setDisplayDate(thisPost.content.createDate);
+            }, function (err)
+            {
+                if (err.response.status === 404)
+                    thisPost.$router.push({ name: 'notFound' });
+                console.error(err);
+            });
+        }
+
+
+
+        setTempPostList(state, postList)
+        {
+            let i, post;
+            for (i = 0; i < postList.length; i++)
+            {
+                post = postList[i];
+                post.category = 'temp';
+                state.originPostList.push(post);
+            }
+            state.hasTemp = (postList.length > 0);
+            state.maxPageNum = Math.ceil(state.originPostList.length / Config.PAGE_SIZE);
+        },

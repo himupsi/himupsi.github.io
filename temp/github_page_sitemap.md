@@ -1,0 +1,1 @@
+https://github.com/rafgraph/spa-github-pages
