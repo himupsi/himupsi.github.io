@@ -1,7 +1,63 @@
 <template>
-    <div class="u-main-wrapper">
-        <nav class="u-main-menu">
-            <div class="u-menu-body" v-if="isInitialized">
+<div class="u-main-wrapper">
+    <nav class="u-main-menu">
+        <div class="u-menu-body" v-if="isInitialized">
+            <div class="u-menu-title">카테고리</div>
+            <div v-if="categories" class="u-menu-categories">
+                <div class="u-menu-category" v-for="category in categories"
+                    :key="category.name"
+                    :class="{ 'u-menu-active-category' : activeCategory && category.value === activeCategory.value }"
+                    @click="changeCategory(category)">
+                    <b-icon :icon="category.icon" :variant="category.variant"></b-icon>
+                    {{category.name}}
+                </div>
+            </div>
+            <div v-if="categoryTags.length > 0" class="u-menu-title">
+                태그
+                <b-badge class="u-menu-all-tag-toggle-btn"
+                    pill
+                    v-if="categoryTags.length > 0"
+                    @click="toggleAllTags()"
+                    :variant="activeTagCount > 0 ? 'dark': 'secondary'">
+                    <b-icon icon="check"></b-icon>
+                    전체
+                </b-badge>
+            </div>
+            <div v-if="categoryTags.length > 0" class="u-menu-tags">
+                <b-badge class="u-menu-tag"
+                    v-for="tag in categoryTags"
+                    :key="tag.name"
+                    :class="tag.class"
+                    @click="toggleTag(tag)">
+                    {{tag.name}}
+                </b-badge>
+            </div>
+            <div v-if="demos.length > 0" class="u-menu-title">
+                데모
+            </div>
+            <div class="u-menu-demos">
+                <div class="u-menu-dmove" v-for="demo in demos"
+                    :key="demo.name">
+                    <b-icon icon="link45deg"></b-icon>
+                    <a target="_blank" :href="demo.src">{{demo.name}}</a>
+                </div>
+            </div>
+        </div>
+        <footer class="u-menu-footer">
+            <a class="u-mene-readme-link" target="_blank" :href="readmeUrl">
+                <b-icon  class="u-menu-about-icon" icon="question-circle-fill"></b-icon>
+                about
+            </a>
+        </footer>
+    </nav>
+    <section class="u-main-content">
+        <b-sidebar v-if="isInitialized" class="u-mobile-posts-menu"
+            id="sidebar-posts-menu"  width="180px"
+            no-header
+            backdrop
+            shadow
+            backdrop-variant="transparent">
+            <aside class="u-menu-body" v-if="isInitialized">
                 <div class="u-menu-title">카테고리</div>
                 <div v-if="categories" class="u-menu-categories">
                     <div class="u-menu-category" v-for="category in categories"
@@ -42,105 +98,49 @@
                         <a target="_blank" :href="demo.src">{{demo.name}}</a>
                     </div>
                 </div>
-            </div>
-            <footer class="u-menu-footer">
+            </aside>
+            <aside class="u-menu-footer">
                 <a class="u-mene-readme-link" target="_blank" :href="readmeUrl">
                     <b-icon  class="u-menu-about-icon" icon="question-circle-fill"></b-icon>
                     about
                 </a>
-            </footer>
-        </nav>
-        <section class="u-main-content">
-            <b-sidebar v-if="isInitialized" class="u-mobile-posts-menu"
-             id="sidebar-posts-menu"  width="180px"
-             no-header
-             backdrop
-             shadow
-             backdrop-variant="transparent">
-                <aside class="u-menu-body" v-if="isInitialized">
-                    <div class="u-menu-title">카테고리</div>
-                    <div v-if="categories" class="u-menu-categories">
-                        <div class="u-menu-category" v-for="category in categories"
-                            :key="category.name"
-                            :class="{ 'u-menu-active-category' : activeCategory && category.value === activeCategory.value }"
-                            @click="changeCategory(category)">
-                            <b-icon :icon="category.icon" :variant="category.variant"></b-icon>
-                            {{category.name}}
-                        </div>
-                    </div>
-                    <div v-if="categoryTags.length > 0" class="u-menu-title">
-                        태그
-                        <b-badge class="u-menu-all-tag-toggle-btn"
-                            pill
-                            v-if="categoryTags.length > 0"
-                            @click="toggleAllTags()"
-                            :variant="activeTagCount > 0 ? 'dark': 'secondary'">
-                            <b-icon icon="check"></b-icon>
-                            전체
-                        </b-badge>
-                    </div>
-                    <div v-if="categoryTags.length > 0" class="u-menu-tags">
-                        <b-badge class="u-menu-tag"
-                            v-for="tag in categoryTags"
-                            :key="tag.name"
-                            :class="tag.class"
-                            @click="toggleTag(tag)">
-                            {{tag.name}}
-                        </b-badge>
-                    </div>
-                    <div v-if="demos.length > 0" class="u-menu-title">
-                        데모
-                    </div>
-                    <div class="u-menu-demos">
-                        <div class="u-menu-dmove" v-for="demo in demos"
-                            :key="demo.name">
-                            <b-icon icon="link45deg"></b-icon>
-                            <a target="_blank" :href="demo.src">{{demo.name}}</a>
-                        </div>
-                    </div>
-                </aside>
-                <aside class="u-menu-footer">
-                    <a class="u-mene-readme-link" target="_blank" :href="readmeUrl">
-                        <b-icon  class="u-menu-about-icon" icon="question-circle-fill"></b-icon>
-                        about
-                    </a>
-                </aside>
-            </b-sidebar>
-            <aside class="u-main-title">
-                <div>
-                    <b-button squared class="u-menu-toggle-btn" v-b-toggle.sidebar-posts-menu variant="light" size="sm">
-                        <i class="icon-menu"></i>
-                    </b-button>
-                    <b-button-group class="u-posts-display-type-btn">
-                        <b-button squared variant="light" size="sm"
-                            v-for="displayType in displayTypes"
-                            :class="{'active': displayType.value === display.value}"
-                            :key="displayType.value"
-                            @click="changeDisplay(displayType)"
-                            >
-                            <i :class="displayType.class"></i>
-                        </b-button>
-                    </b-button-group>
-                </div>
-                <div>
-                    <b-button squared class="u-posts-orderby-btn" variant="light" size="sm" @click="toggleOrderby()">
-                      <b-icon-arrow-down-up></b-icon-arrow-down-up>
-                        {{activeOrderby.name}}
-                    </b-button>
-                </div>
             </aside>
-            <section class="u-posts" v-bind:class="[postsClass]">
-                <post-item v-for="post in postList" :key="post.name" :post="post" :display="postsDisplay"></post-item>
-                <div class="u-no-post" v-if="isInitialized && postList.length === 0">
-                    <b-icon icon="exclamation-circle-fill" variant="warning"></b-icon>
-                    등록된 포스트가 없습니다.
-                </div>
-                <div class="u-posts-inprogress" v-if="! isInitialized">
-                    <b-icon icon="three-dots" animation="cylon" font-scale="2"></b-icon>
-                </div>
-            </section>
+        </b-sidebar>
+        <aside class="u-main-title">
+            <div>
+                <b-button squared class="u-menu-toggle-btn" v-b-toggle.sidebar-posts-menu variant="light" size="sm">
+                    <i class="icon-menu"></i>
+                </b-button>
+                <b-button-group class="u-posts-display-type-btn">
+                    <b-button squared variant="light" size="sm"
+                        v-for="displayType in displayTypes"
+                        :class="{'active': displayType.value === display.value}"
+                        :key="displayType.value"
+                        @click="changeDisplay(displayType)"
+                        >
+                        <i :class="displayType.class"></i>
+                    </b-button>
+                </b-button-group>
+            </div>
+            <div>
+                <b-button squared class="u-posts-orderby-btn" variant="light" size="sm" @click="toggleOrderby()">
+                    <b-icon-arrow-down-up></b-icon-arrow-down-up>
+                    {{activeOrderby.name}}
+                </b-button>
+            </div>
+        </aside>
+        <section class="u-posts" v-bind:class="[postsClass]">
+            <post-item v-for="post in postList" :key="post.name" :post="post" :display="postsDisplay"></post-item>
+            <div class="u-no-post" v-if="isInitialized && postList.length === 0">
+                <b-icon icon="exclamation-circle-fill" variant="warning"></b-icon>
+                등록된 포스트가 없습니다.
+            </div>
+            <div class="u-posts-inprogress" v-if="! isInitialized">
+                <b-icon icon="three-dots" animation="cylon" font-scale="2"></b-icon>
+            </div>
         </section>
-    </div>
+    </section>
+</div>
 
 </template>
 

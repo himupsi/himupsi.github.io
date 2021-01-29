@@ -1,5 +1,5 @@
 <template>
-    <div class="u-header" id="blogHeader">
+    <header class="u-header" id="blogHeader">
         <div onclick="location.href='https://himupsi.github.io';" class="u-home-title">
             {{$Config.BLOG_TITLE}}
         </div>    
@@ -11,7 +11,7 @@
                 <i class="icon-github"></i>
             </a>
         </div>
-    </div>
+    </header>
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template>
-<div>
+<section>
     <div class="u-main-content">
         <div class="u-page-not-found">
             <div class="u-align-center">
@@ -14,7 +14,7 @@
             </div>
         </div>
     </div>
-</div>
+</section>
 </template>
 
 <script>

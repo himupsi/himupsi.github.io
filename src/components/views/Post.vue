@@ -1,36 +1,36 @@
 <template>
-    <section class="u-main-wrapper u-post">
-        <div class="u-main-content">
-            <aside class="u-post-title">
-                <b-button squared variant="light" size="sm" class="u-back-btn" @click="back()">
-                    <b-icon icon="chevron-left"></b-icon>
-                    뒤로
-                </b-button>
-                <span v-if="content">{{content.title}}</span>
-            </aside>
-            <article class="u-post-content">
-                <div class="u-post-inprogress" v-if="! content">
-                    <b-icon icon="three-dots" animation="cylon" font-scale="2"></b-icon>
-                </div>
-                <div v-if="content" class="markdown-body" v-html="content.markdown"></div>
-            </article>
-            <aside v-if="content" class="u-post-info">
-                <div class="u-post-tags">
-                    <b-badge class="u-post-tag"
-                        v-for="tag in content.tags" :key="tag">
-                        {{tag}}
-                    </b-badge>
-                </div>
-                <b-badge v-if="relativeDate" class="u-post-date"
-                    v-b-tooltip.hover :title="createDate">
-                    {{relativeDate}}
+<section class="u-main-wrapper u-post">
+    <div class="u-main-content">
+        <section class="u-post-title">
+            <b-button squared variant="light" size="sm" class="u-back-btn" @click="back()">
+                <b-icon icon="chevron-left"></b-icon>
+                뒤로
+            </b-button>
+            <span v-if="content">{{content.title}}</span>
+        </section>
+        <article class="u-post-content">
+            <div class="u-post-inprogress" v-if="! content">
+                <b-icon icon="three-dots" animation="cylon" font-scale="2"></b-icon>
+            </div>
+            <div v-if="content" class="markdown-body" v-html="content.markdown"></div>
+        </article>
+        <aside v-if="content" class="u-post-info">
+            <div class="u-post-tags">
+                <b-badge class="u-post-tag"
+                    v-for="tag in content.tags" :key="tag">
+                    {{tag}}
                 </b-badge>
-            </aside>
-            <aside v-show="content" class="u-post-comments">
-                <div id="disqus_thread"></div>
-            </aside>
-        </div>
-    </section>
+            </div>
+            <b-badge v-if="relativeDate" class="u-post-date"
+                v-b-tooltip.hover :title="createDate">
+                {{relativeDate}}
+            </b-badge>
+        </aside>
+        <aside v-show="content" class="u-post-comments">
+            <div id="disqus_thread"></div>
+        </aside>
+    </div>
+</section>
 </template>
 
 <script>

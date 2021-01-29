@@ -1,5 +1,5 @@
 <template>
-    <div class="u-post-item" @click="viewPost()" >
+    <article class="u-post-item" @click="viewPost()" >
         <div class="u-post-item-wrapper u-post-item-inprogress" v-if="! content">
             <b-icon icon="three-dots" animation="cylon" font-scale="1"></b-icon>
         </div>
@@ -42,7 +42,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </article>
 </template>
   
 <script>
