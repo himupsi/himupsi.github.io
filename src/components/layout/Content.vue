@@ -1,7 +1,7 @@
 <template>
-<div class="u-main" id="main">
+<main class="u-main" id="main">
     <router-view></router-view>
-</div>
+</main>
 </template>
 
 <script>

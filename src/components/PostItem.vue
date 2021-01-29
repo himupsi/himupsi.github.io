@@ -47,11 +47,9 @@
   
 <script>
 
-import axios from 'axios';
 import moment from 'moment';
 import 'moment/locale/ko';
 import { mapActions } from 'vuex'
-import PostParser from '../../helper/PostParser'
 
 export default {
     name: 'PostItem',

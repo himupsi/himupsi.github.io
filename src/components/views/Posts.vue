@@ -1,6 +1,6 @@
 <template>
     <div class="u-main-wrapper">
-        <div class="u-main-menu">
+        <nav class="u-main-menu">
             <div class="u-menu-body" v-if="isInitialized">
                 <div class="u-menu-title">카테고리</div>
                 <div v-if="categories" class="u-menu-categories">
@@ -43,21 +43,21 @@
                     </div>
                 </div>
             </div>
-            <div class="u-menu-footer">
+            <footer class="u-menu-footer">
                 <a class="u-mene-readme-link" target="_blank" :href="readmeUrl">
                     <b-icon  class="u-menu-about-icon" icon="question-circle-fill"></b-icon>
                     about
                 </a>
-            </div>
-        </div>
-        <div class="u-main-content">
+            </footer>
+        </nav>
+        <section class="u-main-content">
             <b-sidebar v-if="isInitialized" class="u-mobile-posts-menu"
              id="sidebar-posts-menu"  width="180px"
              no-header
              backdrop
              shadow
              backdrop-variant="transparent">
-                <div class="u-menu-body" v-if="isInitialized">
+                <aside class="u-menu-body" v-if="isInitialized">
                     <div class="u-menu-title">카테고리</div>
                     <div v-if="categories" class="u-menu-categories">
                         <div class="u-menu-category" v-for="category in categories"
@@ -98,15 +98,15 @@
                             <a target="_blank" :href="demo.src">{{demo.name}}</a>
                         </div>
                     </div>
-                </div>
-                <div class="u-menu-footer">
+                </aside>
+                <aside class="u-menu-footer">
                     <a class="u-mene-readme-link" target="_blank" :href="readmeUrl">
                         <b-icon  class="u-menu-about-icon" icon="question-circle-fill"></b-icon>
                         about
                     </a>
-                </div>
+                </aside>
             </b-sidebar>
-            <div class="u-main-title">
+            <aside class="u-main-title">
                 <div>
                     <b-button squared class="u-menu-toggle-btn" v-b-toggle.sidebar-posts-menu variant="light" size="sm">
                         <i class="icon-menu"></i>
@@ -128,8 +128,8 @@
                         {{activeOrderby.name}}
                     </b-button>
                 </div>
-            </div>
-            <div class="u-posts" v-bind:class="[postsClass]">
+            </aside>
+            <section class="u-posts" v-bind:class="[postsClass]">
                 <post-item v-for="post in postList" :key="post.name" :post="post" :display="postsDisplay"></post-item>
                 <div class="u-no-post" v-if="isInitialized && postList.length === 0">
                     <b-icon icon="exclamation-circle-fill" variant="warning"></b-icon>
@@ -138,8 +138,8 @@
                 <div class="u-posts-inprogress" v-if="! isInitialized">
                     <b-icon icon="three-dots" animation="cylon" font-scale="2"></b-icon>
                 </div>
-            </div>
-        </div>
+            </section>
+        </section>
     </div>
 
 </template>
