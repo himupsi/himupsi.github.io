@@ -59,7 +59,7 @@ export default {
     },
     metaInfo: function ()
     {
-        let metaInfo, description;
+        let metaInfo;
 
         metaInfo = {
             title: this.$Config.BLOG_TITLE,
