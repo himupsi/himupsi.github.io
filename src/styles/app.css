@@ -584,6 +584,7 @@
     margin-right: 10px;
     align-items: center;
     display: flex !important;
+    width: 55px;
     padding: 0.25rem 0.2rem !important;
 }
 
