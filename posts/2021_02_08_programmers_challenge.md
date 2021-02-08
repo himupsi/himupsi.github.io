@@ -1,5 +1,5 @@
 -----
-title: 프로그래머스 챌린지 후기 - 카카오 커머스
+title: 프로그래머스 챌린지 후기(카카오 커머스)
 summary: 카카오커머스 개발자 영입 - 프론트엔드 개발 챌린지 에 참여해주셔서 감사합니다.
 thumbnail: programmers_challenge.png
 createDate: 202102081000
