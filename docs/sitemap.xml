@@ -4,7 +4,7 @@
         <loc>https://himupsi.github.io/</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
-        <lastmod>2021-01-17</lastmod>
+        <lastmod>2021-02-08</lastmod>
     </url>
     <url>
         <loc>https://himupsi.github.io/?/post/2020_12_23_github_page</loc>
@@ -23,6 +23,12 @@
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
         <lastmod>2020-12-23</lastmod>
+    </url>
+    <url>
+        <loc>https://himupsi.github.io/?/post/20210208_programmers_challenge</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+        <lastmod>2021-02-08</lastmod>
     </url>
     <url>
         <loc>https://himupsi.github.io/?/post/2021_01_12_connecting_to_github_with_ssh</loc>
