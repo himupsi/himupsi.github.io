@@ -44,7 +44,7 @@
             </div>
         </div>
         <footer class="u-menu-footer">
-            <a class="u-mene-readme-link" target="_blank" :href="readmeUrl">
+            <a v-if="isInitialized" class="u-mene-readme-link" target="_blank" :href="readmeUrl">
                 <b-icon  class="u-menu-about-icon" icon="question-circle-fill"></b-icon>
                 about
             </a>
@@ -100,7 +100,7 @@
                 </div>
             </aside>
             <aside class="u-menu-footer">
-                <a class="u-mene-readme-link" target="_blank" :href="readmeUrl">
+                <a v-if="isInitialized" class="u-mene-readme-link" target="_blank" :href="readmeUrl">
                     <b-icon  class="u-menu-about-icon" icon="question-circle-fill"></b-icon>
                     about
                 </a>
