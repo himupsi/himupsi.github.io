@@ -23,9 +23,9 @@ export default {
                     content: this.$Config.BLOG_DESCRIPTION
                 },
                 {
-                    property: 'og:site_name',
+                    property: 'og:title',
                     content: this.$Config.BLOG_TITLE,
-                    vmid: 'og:site_name'
+                    vmid: 'og:title'
                 },
                 {
                     property: 'og:description',
