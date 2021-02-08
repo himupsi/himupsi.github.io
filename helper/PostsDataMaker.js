@@ -68,7 +68,7 @@ function createSiteMapXml(defaultUrl, posts)
     url = [
         {
             loc: BLOG_URL,
-            changefreq: 'weekly',
+            changefreq: 'daily',
             priority: 0.8,
             lastmod: moment().format('YYYY-MM-DD')
         }
