@@ -82,7 +82,7 @@ export default {
         let thisPostItem = this;
         this.content = this.$store.state.postContentMap[this.post.id]
         if (this.content.thumbnail !== undefined)
-            this.content.thumbnailUrl = (this.$Config.IMAGE_URL + this.content.thumbnail + '?raw=true');
+            this.content.thumbnailUrl = (this.$Config.IMAGE_PATH + this.content.thumbnail + '?raw=true');
         this.setDisplayDate(this.content.createDate);
     }
 }

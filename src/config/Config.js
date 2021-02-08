@@ -1,9 +1,11 @@
 const Config = {
-    BLOG_TITLE: 'HIMUPSI DEVLOG',
+    BLOG_HEADER_TITLE: 'HIMUPSI DEVLOG',
+    BLOG_TITLE: '힘없이 Devlog',
+    BLOG_DESCRIPTION: '직접 만드는 블로그..',
     HIDE_HEADER_SCROLL_TOP: 50,
     POSTS_URL: 'https://himupsi.github.io/posts.json',
     POSTS_REPO_URL: 'https://api.github.com/repos/himupsi/himupsi.github.io/contents/posts/',
-    IMAGE_URL: '/images/',
+    IMAGE_PATH: '/images/',
     BLOG_URL: 'https://himupsi.github.io',
     PAGE_SIZE: 10,
     DISQUS_SHORTNAME: 'himupsi-github',

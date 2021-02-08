@@ -35,12 +35,10 @@
 
 <script>
 
-import axios from 'axios';
 import marked from "marked";
 import hljs from 'highlight.js';
 import moment from 'moment';
 import 'moment/locale/ko';
-import PostParser from '../../../helper/PostParser'
 import {mapActions, mapGetters} from 'vuex';
 
 marked.setOptions({
@@ -64,21 +62,48 @@ export default {
         let metaInfo, description;
 
         metaInfo = {
-            title: '힘없이 Devlog',
-            meta:[]
+            title: this.$Config.BLOG_TITLE,
+            meta:[
+                {
+                    property: 'og:type',
+                    content: 'article',
+                    vmid: 'og:type'
+                }
+            ]
         }
 
         if (this.content === undefined)
             return metaInfo;
 
         if (this.content.title)
+        {
             metaInfo.title += (' - ' + this.content.title);
+            metaInfo.meta.push({
+                property: 'og:title',
+                content: metaInfo.title,
+                vmid: 'og:title'
+            });
+        }
+            
         if (this.content.summary)
         {
             metaInfo.meta.push({
                 vmid: "description",
                 name: "description",
                 content: this.content.summary
+            });
+            metaInfo.meta.push({
+                property: 'og:description',
+                content: this.$Config.BLOG_DESCRIPTION,
+                vmid: 'og:description'
+            });
+        }
+        if (this.content.thumbnail)
+        {
+            metaInfo.meta.push({
+                property: 'og:image',
+                content: `${this.$Config.BLOG_URL}${this.$Config.IMAGE_PATH}${this.content.thumbnail}?raw=true`,
+                vmid: 'og:image'
             });
         }
         return metaInfo;

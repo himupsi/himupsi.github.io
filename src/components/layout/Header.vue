@@ -1,7 +1,7 @@
 <template>
     <header class="u-header" id="blogHeader">
         <div onclick="location.href='https://himupsi.github.io';" class="u-home-title">
-            {{$Config.BLOG_TITLE}}
+            {{$Config.BLOG_HEADER_TITLE}}
         </div>    
         <div class="u-right-links">
             <a class="u-header-mail-link" :href="mailToHref">
