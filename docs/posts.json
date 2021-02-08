@@ -1,5 +1,5 @@
 {
-	"createDate": "202102080214",
+	"createDate": "202102080219",
 	"categoriesTags": {
 		"개발": [
 			"Github",
@@ -9,10 +9,6 @@
 			"Disqus",
 			"Vue.js",
 			"Github SSH"
-		],
-		"일상": [
-			"코딩테스트",
-			"프로그래머스"
 		],
 		"생각": [
 			"새해 결심"
@@ -24,8 +20,6 @@
 			"highlight.js",
 			"Disqus",
 			"Vue.js",
-			"코딩테스트",
-			"프로그래머스",
 			"Github SSH",
 			"새해 결심"
 		]
@@ -72,20 +66,6 @@
 			"id": "2020_12_23_social_reply",
 			"name": "2020_12_23_social_reply.md",
 			"md": "고맙게도 무료로 댓글을 사용할수 있게 해주는 [Disqus](https://disqus.com/) 가 있다. \n\n적용하는 절차는 다음과 같다.\n\n1. Disqus에 가입한다.\n\n1. 가입하고 화면의 `GET STARTED`를 누른다.\n\n    ![스크린샷](/images/20201223_2_1.png?raw=true)\n\n1. `I want to install diqus on my site`를 선택한다.\n\n    ![스크린샷](/images/20201223_2_2.png?raw=true)\n\n1. 사이트 정보를 입력하고 `Create Site`를 누른다.\n\n    ![스크린샷](/images/20201223_2_3.png?raw=true)\n\n1. 그냥 무료인 `Basic`를 선택한다.\n\n    ![스크린샷](/images/20201223_2_4.png?raw=true)\n\n1. 블로그를 어떤 걸로 구축했는지에 따라 선택하면 된다. 이 블로그는 vue.js기반으로 만들고 있기 때문에 맨아래 `Universal code`를 선택했다.\n\n    ![스크린샷](/images/20201223_2_5.png?raw=true)\n\n1. `Universal code`를 선택하면 아래와 같은 코드가 생성된다.\n\n    ![스크린샷](/images/20201223_2_6.png?raw=true)\n\n* VueJs 에서 적용하는 방법 아래를 참고!\n\n    ```html\n    <template>\n        <div id=\"disqus_thread\"></div>\n    <template>\n    ```\n    ```javascript\n    <script>\n    export default {\n        mounted: function ()\n            var disqus_config = function () {\n\n            // Replace PAGE_URL with your page's canonical URL variable\n            this.page.url = (window.location.host + window.location.pathname);\n            // Replace PAGE_IDENTIFIER with your page's unique identifier variable\n            this.page.identifier = this.$route.params.postid;\n\n            };\n\n            (function() { // DON'T EDIT BELOW THIS LINE\n            var d = document, s = d.createElement('script');\n            s.src = 'https://himupsi-github.disqus.com/embed.js';\n            s.setAttribute('data-timestamp', +new Date());\n            (d.head || d.body).appendChild(s);\n            })();\n        }\n    }\n    </script>\n    ```"
-		},
-		{
-			"title": "프로그래머스 챌린지 후기 - 카카오 커머스",
-			"summary": "1차 합격, 2차 불합격 예정",
-			"thumbnail": "programmers_challenge.png",
-			"createDate": 202102081000,
-			"category": "일상",
-			"tags": [
-				"코딩테스트",
-				"프로그래머스"
-			],
-			"id": "20210208_programmers_challenge",
-			"name": "20210208_programmers_challenge.md",
-			"md": "### 프로그래머스 카카오 커머스 챌린지 후기\n\n\n#### 1차 코딩 테스트\n\n![스크린샷](/images/20210208_1_1.png?raw=true)\n\n## 결과: 합격 ##\n\n3문제 중 2문제 풀고 1문제는 효율성 테스트에서 실패...\n\n코딩테스트 경험이 거의 없어서 [프로그래머스 연습문제](https://programmers.co.kr/learn/challenges?tab=algorithm_practice_kit)를 풀면서 준비했다.  \n일부 문제만 풀어봤지만 다른 사람 풀이를 보는게 많이 도움이 되었던거 같다. 당연한 이야기 이지만 문제를 잘읽는 게 중요한 것 같다.  \n실패한 문제의 실패 원인이 시험이 끝난후에야 방법이 떠올랐다... 붙어서 다행었지만 머리가 굳어서 인지 머리가 빨리 빨리 안돌아간다.  \n회사를 다니다 보면 생각보다 머리쓸 일이 없다. 심심할때 코딩 문제를 풀어보는게 두뇌 회전에 좋을것 같다.(쉬기 바빠서 잘 안할것 같지만...)  \n\n```\n여담이지만 합격 메일이 아래 제목으로 와서 떨어진 줄 알았다...\n\n'카카오커머스 개발자 영입 - 프론트엔드 개발 챌린지'에 참여해주셔서 감사합니다.\n```\n\n#### 2차 과제 테스트\n\n## 결과: 불합격(예정) ##\n\nVanila JS(순수 자바스크립트)에 익숙해야할 필요가 있다. 코드 구조를 잡으려다 실패해서 필수을 모두 구현하지 못하고 끝냈다...  \n준비가 부족한 탓... 평소에 Vanila js로 뭐라도 만들어 볼 걸이라는 후회가 든다.  \n모듈로 코드 구조를 잡으려다 실패했는데.. 시험 중이라 정확한 원인을 못찾았는데 Javascript에 대한 이해가 부족한 탓인거 같다.(왜 자꾸 js 파일을 html 처럼 인식했는지 이해가 안간다..)\n\n#### 반성\n\n1. 평소 머리를 쓸려고 노력하자.\n1. 개발을 꾸준히 하자.\n1. javascript 공부도 꾸준히 하자.(프레임워크는 결국 버려진다...)"
 		},
 		{
 			"title": "Github SSH key 로 접속하기",
