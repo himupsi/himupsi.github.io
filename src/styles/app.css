@@ -465,6 +465,7 @@
     flex-grow: 0;
     flex-shrink: 0;
     align-items: center;
+    font-size: 1.5em
 }
 
 .u-post-info
@@ -724,6 +725,26 @@
     background-color: #FFC4E1 !important;
 }
 
+.markdown-body h1 {
+    font-size: 1.5em;
+}
+
+.markdown-body h2 {
+    font-size: 1.4em;
+}
+
+.markdown-body h3 {
+    font-size: 1.3em;
+}
+
+.markdown-body h4 {
+    font-size: 1.2em;
+}
+
+.markdown-body h5 {
+    font-size: 1.1em;
+}
+
 .markdown-body img
 {
     box-shadow: 0 0 6px rgba(150, 150, 150, 0.8);
@@ -760,7 +781,7 @@
 
     .u-post-title
     {
-        font-size: 100%
+        font-size: 1.3em;
     }
 
     .u-post-content .markdown-body
@@ -770,7 +791,7 @@
 
     .u-resume-title
     {
-        font-size: 100%
+        font-size: 1.3em;
     }
 
     .u-resume-content .markdown-body
@@ -837,7 +858,7 @@
 
     .u-post-title
     {
-        font-size: 90%
+        font-size: 1.1em;
     }
 
     .u-post-content
@@ -852,7 +873,7 @@
 
     .u-resume-title
     {
-        font-size: 90%
+        font-size: 1.1em;
     }
 
     .u-resume-content .markdown-body
