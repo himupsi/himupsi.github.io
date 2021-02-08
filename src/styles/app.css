@@ -722,7 +722,12 @@
 .u-tag-23
 {
     background-color: #FFC4E1 !important;
-}    
+}
+
+.markdown-body img
+{
+    box-shadow: 0 0 6px rgba(150, 150, 150, 0.8);
+}
 
 @media only screen and (max-width: 900px) {
     /* For small screen: */
