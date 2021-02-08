@@ -94,7 +94,7 @@ export default {
             });
             metaInfo.meta.push({
                 property: 'og:description',
-                content: this.$Config.BLOG_DESCRIPTION,
+                content: this.content.summary,
                 vmid: 'og:description'
             });
         }
