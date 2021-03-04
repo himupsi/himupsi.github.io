@@ -1,6 +1,6 @@
 -----
-title: Github 페이지(Devlog) 개발 후기
-summary: Vue.js 로 Devlog 만들면서 느낀점.
+title: Github 페이지(개발 블로그) 개발 후기
+summary: Vue.js 로 개발 블로그 만들면서 느낀점.
 thumbnail: devlog_kakaotalk.png
 createDate: 202103040100
 category: 개발
@@ -10,7 +10,7 @@ tags: [ Vue.js, Github Page ]
 ## Github Page
 
 무료로 블로그를 호스팅 할수 있어서 좋다. 물론 WAS 쪽을 구현할 수 없다는 한계도 있지만 **무료** 라서 만족한다.
-**정적 웹페이지**로 만들어야 한다... ㅎㅎ
+**정적 웹페이지**로 만들어야 한다...
  이미 Github Page 블로그를 쉽게 만들수 있는 번들(?)도 존재 하지만 Vue.js로 직접 블로그를 개발해서 사용할수 있다는 것에 매우 만족한다.
 
 ## SEO(검색 엔진 최적화)
