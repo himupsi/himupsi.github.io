@@ -23,6 +23,6 @@ SPA 와  Github page 조합일 때 문제점들을 간단히 요약하자면
 1. 404 페이지에서 리다이렉트를 해주어도 검색엔진이 크롤링 할때에는 이것을 인지하지 못하고  404 에러로 받아들인다. 
 * [spa-github-pages](https://github.com/rafgraph/spa-github-pages)의 해결책을 간단히 설명하자면 URL을 파라미터 처럼 인식하도록 도메인 뒤에 `?`를 추가해서 sitemap.xml을 만들고  index.html 에서도 `?`뒤에 들어온 URL을 처리하는 로직을 추가하는 방법이다.
 
-## Azure pipeines
+## Azure pipelines
 
-Microsoft Azure 에서 CI/CD를 무료로 사용할수 있게 해줘서 포스팅을 작성할 때마다 빌드 해야했던 번거로움을 없앨수 있었다. Azure pipeines에서 포스팅 파일 파싱하고 sitemap.xml 이 자동으로 생성되도록 했다. 역시 머리를 써야 손발이 고생을 안한다..
+Microsoft Azure 에서 CI/CD를 무료로 사용할수 있게 해줘서 포스팅을 작성할 때마다 빌드 해야했던 번거로움을 없앨수 있었다. Azure pipelines에서 포스팅 파일 파싱하고 sitemap.xml 이 자동으로 생성되도록 했다. 역시 머리를 써야 손발이 고생을 안한다..
