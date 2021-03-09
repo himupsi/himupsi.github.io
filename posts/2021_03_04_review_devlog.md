@@ -10,6 +10,12 @@ tags: [ Vue.js, Github Page ]
 ## Vue.js
 
 AngularJS를 사용해봤기 때문인지 생각보다 쉽게 적응할 수 있었다.
+툭별한 건 `.vue` 파일을 지원해 script와 html 을 한파일에 코딩할수 있다는 것이다.
+
+* vue-cli
+    * 프로젝트를 초기화 하는데 편하다.
+    * Web UI도 지원하는데 사용해보진 안해봤다..
+    * webpack을 사용하기 때문에 소스 적용전에 빌드를 한번씩 해어야한다.
 
 * vue-router
     * 사용하기 쉽다.
@@ -17,7 +23,7 @@ AngularJS를 사용해봤기 때문인지 생각보다 쉽게 적응할 수 있�
 * vuex
     * 사용하는데 약간 난이도가 있다. 블로그를 구현하는데 Event Bus 로 충분할거 같았지만 일부러 사용해 보았다. 상용(?)에서는 실제 어떻게 사용할지 궁금하다.
 * bootstrap-vue
-    * 기존에 Bootstrap을 사용해 보았기 때문에 그냥 사용했다. vue용이라고 별로 다를건 없다.
+    * 기존에 Bootstrap을 사용해 보았기 때문에 그냥 사용했다. vue용이라고 별 다를 건 없다.
     * vuetify 라는 것도 유명한거 같은데 대충 훑어봤을땐 적응하는데 시간이 필요할 거 같다.(마음이 급해서 그냥 Bootstrap을 사용했다.)
 
 ## Github Page
@@ -28,7 +34,7 @@ AngularJS를 사용해봤기 때문인지 생각보다 쉽게 적응할 수 있�
 
 ## Markdown
 
-포스팅 양식으로 Markdown을 사용했다. [jekyll](https://jekyllrb.com/)에서도 markdown을 사용하고 있고 기존 회사에서 wiki를 작성할때 많이 사용해봤기 때문에 선택했다. 다른 마땅한 대안도 떠오르지 않는다... 라이브러리는 marked.js를 사용해 별 무리 없이 구현할 수 있었다. 개발 블로그이다 보니 코드 블록을 하이라이트 시켜줄 필요가 있어 검색해보니 highlight.js를 사용했다. highlight.js는 여러 테마를 지원해서 좋았다.
+포스팅 양식으로 Markdown을 사용했다. [jekyll](https://jekyllrb.com/)에서도 markdown을 사용하고 있고 기존 회사에서 wiki를 작성할 때 많이 사용해봤기 때문에 선택했다. 다른 마땅한 대안도 떠오르지 않는다... 라이브러리는 marked.js를 사용해 별 무리 없이 구현할 수 있었다. 개발 블로그이다 보니 코드 블록을 하이라이트 시켜줄 필요가 있어 검색해 찾은 highlight.js를 추가로 사용했다. highlight.js는 여러 테마를 지원해서 좋았다.
 
 ## SEO(검색 엔진 최적화)
 
