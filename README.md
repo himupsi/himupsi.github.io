@@ -37,7 +37,7 @@
 * 2021.01.18
     * Google, Naver 검색 등록
 * 2021.02.08
-    * OG meta 태그 추가: SPA의 한계가 있다...
+    * OG meta 태그 추가(포스팅별 OG meta 는 SPA의 한계로 실패했다.)
 
 ### Todo
 
